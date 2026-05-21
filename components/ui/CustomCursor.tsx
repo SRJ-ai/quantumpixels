@@ -7,8 +7,13 @@ export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
   const [isVisible, setIsVisible] = useState(false) // Wait until first mouse move to show
+  const [isTouch, setIsTouch] = useState(true)
 
   useEffect(() => {
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768
+    setIsTouch(isTouchDevice)
+    if (isTouchDevice) return
+
     const updateMousePosition = (e: MouseEvent) => {
       if (!isVisible) setIsVisible(true)
       setMousePosition({ x: e.clientX, y: e.clientY })
@@ -33,9 +38,9 @@ export default function CustomCursor() {
       window.removeEventListener('mousemove', updateMousePosition)
       document.body.style.cursor = 'auto'
     }
-  }, [isVisible])
+  }, [isVisible, isTouch])
 
-  if (!isVisible) return null
+  if (isTouch || !isVisible) return null
 
   return (
     <>
