@@ -34,6 +34,36 @@
 @theme inline {
   --color-background: #000000;
   --color-foreground: #F5F5F7;
+
+  /* Mobile Layout Colors */
+  --color-mobile-bg: hsl(0 0% 4%);
+  --color-mobile-surface: hsl(0 0% 8%);
+  --color-mobile-text: hsl(0 0% 96%);
+  --color-mobile-muted: hsl(0 0% 53%);
+  --color-mobile-stroke: hsl(0 0% 12%);
+  --color-mobile-accent: hsl(0 0% 96%);
+
+  /* Mobile Fonts */
+  --font-display: var(--font-instrument), serif;
+
+  /* Mobile Animations */
+  --animate-scroll-down: scroll-down 1.5s ease-in-out infinite;
+  --animate-role-fade-in: role-fade-in 0.4s ease-out;
+  --animate-gradient-shift: gradient-shift 6s ease infinite;
+
+  @keyframes scroll-down {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(200%); }
+  }
+  @keyframes role-fade-in {
+    0% { opacity: 0; transform: translateY(8px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 }
 
 /* ── Reset ──────────────────────────────────────── */
@@ -107,6 +137,11 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.mobile-accent-gradient {
+  background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
+  background-size: 200% auto;
 }
 
 /* ── Glass (Apple-style blur) ───────────────────── */
