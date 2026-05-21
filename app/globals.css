@@ -41,6 +41,7 @@
 }
 
 html.light {
+  --heading-font:   var(--font-instrument-serif), serif;
   --bg-primary:     #FFFFFF;
   --bg-elevated:    #FFFFFF;
   --bg-card:        #F9F9F9;
