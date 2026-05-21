@@ -153,11 +153,11 @@ function GeometricArchitecture({ isMobile }: { isMobile: boolean }) {
         <mesh key={i} position={props.position} scale={props.scale} rotation={props.rotation}>
           <boxGeometry args={[1, 1, 1]} />
           <meshStandardMaterial 
-            color={mode === 'light' ? "#ffffff" : "#050816"} 
-            metalness={0.8} 
-            roughness={0.2} 
-            emissive={i % 5 === 0 ? colors.secondary : (mode === 'light' ? "#eeeeee" : "#000000")}
-            emissiveIntensity={0.5}
+            color={mode === 'light' ? "#f9f9fb" : "#050816"} 
+            metalness={mode === 'light' ? 0.1 : 0.8} 
+            roughness={mode === 'light' ? 0.85 : 0.2} 
+            emissive={i % 5 === 0 ? colors.secondary : "#000000"}
+            emissiveIntensity={mode === 'light' ? 0 : 0.5}
           />
           {/* Wireframe edges for cyberpunk feel */}
           <mesh>
@@ -232,11 +232,11 @@ function PhysicsOrbs({ isMobile }: { isMobile: boolean }) {
         <instancedMesh args={[undefined, undefined, count]} receiveShadow castShadow>
           <icosahedronGeometry args={[1, isMobile ? 0 : 2]} />
           <meshStandardMaterial 
-            color={mode === 'light' ? "#ffffff" : "#050816"} 
-            metalness={0.9} 
-            roughness={0.1} 
+            color={mode === 'light' ? "#f9f9fb" : "#050816"} 
+            metalness={mode === 'light' ? 0.1 : 0.9} 
+            roughness={mode === 'light' ? 0.85 : 0.1} 
             emissive={colors.primary}
-            emissiveIntensity={0.2}
+            emissiveIntensity={mode === 'light' ? 0.05 : 0.2}
           />
         </instancedMesh>
       </InstancedRigidBodies>
@@ -308,8 +308,8 @@ export default function HybridScene() {
 
   return (
     <PerformanceMonitor onIncline={() => setDpr(1.5)} onDecline={() => setDpr(1)}>
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[10, 10, 5]} intensity={1.5} color={colors.primary} />
+      <ambientLight intensity={mode === 'light' ? 1.5 : 0.5} color={mode === 'light' ? '#ffffff' : '#ffffff'} />
+      <directionalLight position={[10, 10, 5]} intensity={mode === 'light' ? 2 : 1.5} color={mode === 'light' ? '#ffffff' : colors.primary} />
       <Environment preset="city" />
 
       <AbstractGlass isMobile={isMobile} />

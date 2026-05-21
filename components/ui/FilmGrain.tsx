@@ -1,6 +1,9 @@
 'use client'
 
+import { useTheme } from '@/components/ThemeContext'
+
 export default function FilmGrain() {
+  const { mode } = useTheme()
   return (
     <div
       style={{
@@ -11,8 +14,8 @@ export default function FilmGrain() {
         height: '100vh',
         pointerEvents: 'none',
         zIndex: 9998,
-        opacity: 0.25,
-        mixBlendMode: 'overlay',
+        opacity: mode === 'light' ? 0.3 : 0.25,
+        mixBlendMode: mode === 'light' ? 'multiply' : 'overlay',
       }}
     >
       <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
