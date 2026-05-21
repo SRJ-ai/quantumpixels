@@ -215,11 +215,14 @@ function PhysicsOrbs() {
       {/* Orbs */}
       <InstancedRigidBodies
         ref={rigidBodies}
-        positions={orbs.map(o => o.position)}
-        scales={orbs.map(o => [o.scale, o.scale, o.scale])}
+        instances={orbs.map((o, i) => ({
+          key: i,
+          position: o.position,
+          scale: [o.scale, o.scale, o.scale],
+          restitution: 0.8,
+          friction: 0.1
+        }))}
         colliders="ball"
-        restitution={0.8}
-        friction={0.1}
       >
         <instancedMesh args={[undefined, undefined, 30]} receiveShadow castShadow>
           <icosahedronGeometry args={[1, 2]} />
