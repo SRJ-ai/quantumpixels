@@ -9,7 +9,7 @@ import * as THREE from 'three'
 import { useTheme } from '@/components/ThemeContext'
 
 // 1. Abstract Glass (Hero Section)
-function AbstractGlass() {
+function AbstractGlass({ isMobile }: { isMobile: boolean }) {
   const meshRef = useRef<THREE.Mesh>(null)
   
   useFrame((state, delta) => {
@@ -25,9 +25,10 @@ function AbstractGlass() {
         <icosahedronGeometry args={[2.5, 0]} />
         <MeshTransmissionMaterial
           backside
-          samples={4}
+          samples={isMobile ? 2 : 4}
+          resolution={isMobile ? 512 : 1024}
           thickness={0.5}
-          chromaticAberration={0.8}
+          chromaticAberration={isMobile ? 0.4 : 0.8}
           anisotropy={0.3}
           distortion={0.5}
           distortionScale={0.5}
@@ -53,9 +54,9 @@ function AbstractGlass() {
 }
 
 // 2. Particle Cosmos (Middle Sections)
-function ParticleCosmos() {
+function ParticleCosmos({ isMobile }: { isMobile: boolean }) {
   const pointsRef = useRef<THREE.Points>(null)
-  const count = 12000
+  const count = isMobile ? 3000 : 12000
 
   const { colors: themeColors } = useTheme()
 
@@ -110,12 +111,13 @@ function ParticleCosmos() {
 }
 
 // 3. Geometric Architecture (Footer Sections)
-function GeometricArchitecture() {
+function GeometricArchitecture({ isMobile }: { isMobile: boolean }) {
   const groupRef = useRef<THREE.Group>(null)
   
   const blocks = useMemo(() => {
     const arr = []
-    for (let i = 0; i < 40; i++) {
+    const count = isMobile ? 15 : 40
+    for (let i = 0; i < count; i++) {
       arr.push({
         position: [
           (Math.random() - 0.5) * 40,
@@ -171,11 +173,14 @@ function GeometricArchitecture() {
 }
 
 // 4. Interactive Physics Orbs (Services area)
-function PhysicsOrbs() {
+function PhysicsOrbs({ isMobile }: { isMobile: boolean }) {
   const { colors } = useTheme()
   const rigidBodies = useRef<any>(null)
+  
+  const count = isMobile ? 10 : 30
+  
   const orbs = useMemo(() => {
-    return Array.from({ length: 30 }).map(() => ({
+    return Array.from({ length: count }).map(() => ({
       position: [(Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20, (Math.random() - 0.5) * 10 - 60] as [number, number, number],
       scale: Math.random() * 0.8 + 0.4
     }))
@@ -224,8 +229,8 @@ function PhysicsOrbs() {
         }))}
         colliders="ball"
       >
-        <instancedMesh args={[undefined, undefined, 30]} receiveShadow castShadow>
-          <icosahedronGeometry args={[1, 2]} />
+        <instancedMesh args={[undefined, undefined, count]} receiveShadow castShadow>
+          <icosahedronGeometry args={[1, isMobile ? 0 : 2]} />
           <meshStandardMaterial 
             color="#050816" 
             metalness={0.9} 
@@ -266,6 +271,7 @@ function PointerCollider() {
 
 // Master Controller
 export default function HybridScene() {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
   const { camera } = useThree()
   const { colors } = useTheme()
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -299,16 +305,16 @@ export default function HybridScene() {
       <directionalLight position={[10, 10, 5]} intensity={1.5} color={colors.primary} />
       <Environment preset="city" />
 
-      <AbstractGlass />
-      <ParticleCosmos />
-      <GeometricArchitecture />
+      <AbstractGlass isMobile={isMobile} />
+      <ParticleCosmos isMobile={isMobile} />
+      <GeometricArchitecture isMobile={isMobile} />
       
       <Physics gravity={[0, 0, 0]}>
-        <PhysicsOrbs />
+        <PhysicsOrbs isMobile={isMobile} />
       </Physics>
       
       {/* Cinematic Post-Processing */}
-      {dpr > 1 && (
+      {!isMobile && dpr > 1 && (
         <EffectComposer multisampling={4}>
           <Bloom 
             luminanceThreshold={0.5} 
