@@ -7,11 +7,11 @@ import Image from 'next/image'
 import { useTheme } from '@/components/ThemeContext'
 
 const links = [
-  { href: '#home',    label: 'Home', primary: true },
-  { href: '#studio',  label: 'Studio' },
-  { href: '#about',   label: 'About' },
-  { href: '#journal', label: 'Journal' },
-  { href: '#contact', label: 'Reach Us' },
+  { href: '#about',    label: 'About' },
+  { href: '#services', label: 'Services' },
+  { href: '#projects', label: 'Work' },
+  { href: '#process',  label: 'Process' },
+  { href: '#contact',  label: 'Contact' },
 ]
 
 export default function Navbar() {
@@ -67,9 +67,9 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.08 * i + 0.2, duration: 0.4 }}
-                style={{ fontSize: 14, color: l.primary ? 'var(--text-primary)' : 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}
+                style={{ fontSize: 14, color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = l.primary ? 'var(--text-primary)' : 'var(--text-secondary)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
               >
                 {l.label}
               </motion.a>
@@ -125,7 +125,7 @@ export default function Navbar() {
               transition: 'background 0.3s',
             }}
           >
-            Begin Journey
+            Get in Touch
           </motion.a>
 
           {/* Mobile toggle */}
