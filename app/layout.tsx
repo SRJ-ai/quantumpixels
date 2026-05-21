@@ -24,8 +24,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Quantum Pixels — Engineering The Future of Digital Experiences',
-  description: 'Quantum Pixels is a premium futuristic student-founded technology startup building AI-powered education platforms, immersive games, and scalable software solutions.',
+  metadataBase: new URL('https://srj-ai.github.io/quantumpixels'),
+  title: "Quantum Pixels - Where Creativity Meets Engineering",
+  description: "We build intelligent digital experiences that merge creativity with cutting-edge engineering.",
   keywords: ['futuristic software startup', 'education technology', 'gaming studio', 'software development company', 'AI-powered digital solutions', 'engineering startup'],
   authors: [{ name: 'Quantum Pixels' }],
   openGraph: {
