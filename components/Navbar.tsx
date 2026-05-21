@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sun, Moon } from 'lucide-react'
+import Image from 'next/image'
 import { useTheme } from '@/components/ThemeContext'
 
 const links = [
@@ -50,7 +51,7 @@ export default function Navbar() {
               background: 'var(--bg-elevated)', border: '1px solid var(--border)',
               overflow: 'hidden'
             }}>
-              <img src="/quantumpixels/logo.png" alt="Quantum Pixels Logo" style={{ width: 32, height: 32, objectFit: 'cover' }} />
+              <Image src="/quantumpixels/logo.png" alt="Quantum Pixels Logo" width={32} height={32} style={{ objectFit: 'cover' }} priority />
             </div>
             <span style={{ fontSize: 16, fontWeight: 600, letterSpacing: '-0.01em', color: 'var(--text-primary)', fontFamily: 'var(--heading-font)' }}>
               Quantum<span className="qp-gradient" style={{ color: colors.primary }}>Pixels</span>
@@ -80,6 +81,7 @@ export default function Navbar() {
                 <button
                   key={t}
                   onClick={() => setTheme(t)}
+                  aria-label={`Switch to ${t} theme`}
                   style={{
                     width: 12, height: 12, borderRadius: '50%',
                     background: t === 'cyberpunk' ? '#A855F7' : t === 'matrix' ? '#00FF41' : '#FFFFFF',
@@ -98,6 +100,7 @@ export default function Navbar() {
           {/* Theme Toggle */}
           <button 
             onClick={toggleMode}
+            aria-label="Toggle Light/Dark Mode"
             className="flex items-center justify-center" 
             style={{ color: 'var(--text-primary)', background: 'rgba(128,128,128,0.1)', border: '1px solid var(--border)', cursor: 'pointer', padding: '8px', borderRadius: '8px', marginRight: '8px' }}
           >
@@ -124,7 +127,10 @@ export default function Navbar() {
           </motion.a>
 
           {/* Mobile toggle */}
-          <button className="flex md:hidden items-center justify-center" style={{ color: 'var(--text-primary)', background: 'var(--bg-elevated)', border: '1px solid var(--border)', cursor: 'pointer', padding: '8px', borderRadius: '8px' }}
+          <button 
+            className="flex md:hidden items-center justify-center" 
+            aria-label="Toggle Mobile Menu"
+            style={{ color: 'var(--text-primary)', background: 'var(--bg-elevated)', border: '1px solid var(--border)', cursor: 'pointer', padding: '8px', borderRadius: '8px' }}
             onClick={() => setOpen(!open)}
           >
             {open ? <X size={22} /> : <Menu size={22} />}

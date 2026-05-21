@@ -97,6 +97,8 @@ export default function Projects() {
                 transition: 'background 0.3s',
                 position: 'relative',
                 overflow: 'hidden',
+                willChange: 'transform, opacity',
+                transform: 'translateZ(0)',
                 // Apply liquid filter conditionally if hovered
                 filter: hoveredIndex === i ? 'url(#liquidFilter)' : 'none'
               }}
@@ -117,17 +119,17 @@ export default function Projects() {
                 displacement.set(0) // settle back down
                 e.currentTarget.style.background = 'transparent';
                 const title = e.currentTarget.querySelector('.proj-title') as HTMLElement;
-                if (title) title.style.color = '#fff';
+                if (title) title.style.color = 'var(--text-primary)';
                 const arrow = e.currentTarget.querySelector('.proj-arrow') as HTMLElement;
                 if (arrow) {
-                  arrow.style.color = '#424245';
+                  arrow.style.color = 'var(--text-tertiary)';
                   arrow.style.transform = 'translate(0, 0)';
                 }
               }}
             >
               <div style={{ display: 'flex', gap: 16, padding: '0 8px' }}>
                 {/* Number */}
-                <span style={{ fontSize: 12, color: '#424245', fontFamily: 'monospace', paddingTop: 4, width: 24, flexShrink: 0 }}>
+                <span style={{ fontSize: 12, color: 'var(--text-tertiary)', fontFamily: 'monospace', paddingTop: 4, width: 24, flexShrink: 0 }}>
                   0{i + 1}
                 </span>
 
@@ -136,19 +138,19 @@ export default function Projects() {
                   <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 16, marginBottom: 8 }}>
                     <h3
                       className="proj-title"
-                      style={{ fontSize: 20, fontWeight: 600, color: '#fff', fontFamily: 'var(--heading-font)', transition: 'color 0.3s' }}
+                      style={{ fontSize: 20, fontWeight: 600, color: 'var(--text-primary)', fontFamily: 'var(--heading-font)', transition: 'color 0.3s' }}
                     >
                       {p.title}
                     </h3>
-                    <div className="proj-arrow" style={{ transition: 'all 0.3s', color: '#424245', marginTop: 4 }}>
+                    <div className="proj-arrow" style={{ transition: 'all 0.3s', color: 'var(--text-tertiary)', marginTop: 4 }}>
                       <ArrowUpRight size={16} />
                     </div>
                   </div>
-                  <p style={{ fontSize: 14, color: '#86868B', lineHeight: 1.6, marginBottom: 12, maxWidth: 600 }}>{p.desc}</p>
+                  <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 12, maxWidth: 600 }}>{p.desc}</p>
                   
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
                     {p.tags.map(t => (
-                      <span key={t} style={{ fontSize: 11, color: '#424245' }}>{t}</span>
+                      <span key={t} style={{ fontSize: 11, color: 'var(--text-tertiary)' }}>{t}</span>
                     ))}
                     <span style={{ fontSize: 11, color: colors.primary, marginLeft: 'auto' }}>{p.status}</span>
                   </div>

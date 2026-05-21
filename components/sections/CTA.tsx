@@ -72,11 +72,13 @@ export default function CTA() {
           >
             Get in Touch
             <ArrowRight size={14} className="cta-arrow" style={{ transition: 'transform 0.2s' }} />
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="https://cal.com"
             target="_blank"
             rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 25 }}
             style={{
               padding: '0.875rem 2rem', borderRadius: 999,
               border: '1px solid var(--border)', color: '#F5F5F7',
@@ -87,7 +89,7 @@ export default function CTA() {
             onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.background = 'transparent' }}
           >
             Book a Call
-          </a>
+          </motion.a>
         </motion.div>
       </div>
     </section>

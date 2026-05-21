@@ -58,19 +58,21 @@ export default function WhyUs() {
               transition={{ duration: 0.5, delay: 0.1 + i * 0.06 }}
               style={{
                 padding: '24px 20px',
-                background: '#0a0a0a',
-                transition: 'background 0.3s'
+                background: 'var(--bg-elevated)',
+                transition: 'background 0.3s',
+                willChange: 'transform, opacity',
+                transform: 'translateZ(0)'
               }}
               onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--bg-card)')}
-              onMouseLeave={(e) => (e.currentTarget.style.background = '#0a0a0a')}
+              onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--bg-elevated)')}
             >
-              <span style={{ fontSize: 12, color: '#424245', fontFamily: 'monospace', marginBottom: 16, display: 'block' }}>
+              <span style={{ fontSize: 12, color: 'var(--text-tertiary)', fontFamily: 'monospace', marginBottom: 16, display: 'block' }}>
                 0{i + 1}
               </span>
-              <h3 style={{ fontSize: 18, fontWeight: 600, color: '#fff', fontFamily: 'var(--heading-font)', marginBottom: 8 }}>
+              <h3 style={{ fontSize: 18, fontWeight: 600, color: 'var(--text-primary)', fontFamily: 'var(--heading-font)', marginBottom: 8 }}>
                 {r.title}
               </h3>
-              <p style={{ fontSize: 14, color: '#86868B', lineHeight: 1.6 }}>{r.desc}</p>
+              <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.6 }}>{r.desc}</p>
             </motion.div>
           ))}
         </div>

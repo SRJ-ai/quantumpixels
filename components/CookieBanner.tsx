@@ -58,6 +58,7 @@ export default function CookieBanner() {
             </div>
             <button
               onClick={acceptCookies}
+              aria-label="Accept Cookies"
               style={{
                 padding: '10px 20px',
                 background: 'var(--accent)',

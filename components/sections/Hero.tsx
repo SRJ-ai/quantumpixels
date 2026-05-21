@@ -65,33 +65,38 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.6 }}
           style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: 16 }}
         >
-          <a
+          <motion.a
             href="#services"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 25 }}
             style={{
               padding: '0.875rem 2rem', borderRadius: 999,
               background: 'var(--text-primary)', color: 'var(--bg-primary)',
               fontSize: 14, fontWeight: 600, textDecoration: 'none',
-              transition: 'transform 0.2s',
+              display: 'inline-block'
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
           >
             Explore Our Work
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="#contact"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 25 }}
             style={{
               padding: '0.875rem 2rem', borderRadius: 999,
               border: '1px solid var(--border)', color: 'var(--text-primary)',
               fontSize: 14, fontWeight: 600, textDecoration: 'none',
               background: 'var(--bg-glass)', backdropFilter: 'blur(10px)',
-              transition: 'border-color 0.3s, background 0.3s, transform 0.2s',
+              transition: 'border-color 0.3s, background 0.3s',
+              display: 'inline-block'
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--text-secondary)'; e.currentTarget.style.background = 'var(--bg-glass-heavy)'; e.currentTarget.style.transform = 'scale(1.05)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.background = 'var(--bg-glass)'; e.currentTarget.style.transform = 'scale(1)'; }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--text-secondary)'; e.currentTarget.style.background = 'var(--bg-glass-heavy)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.background = 'var(--bg-glass)'; }}
           >
             Start a Project
-          </a>
+          </motion.a>
         </motion.div>
       </motion.div>
 
