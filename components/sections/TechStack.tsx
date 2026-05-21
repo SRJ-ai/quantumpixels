@@ -117,7 +117,7 @@ export default function TechStack() {
                 display: 'flex', alignItems: 'center', gap: 12,
                 padding: '1rem 2rem', borderRadius: 16,
                 border: '1px solid var(--border)',
-                background: 'rgba(255,255,255,0.02)'
+                background: 'var(--bg-card)'
               }}>
                 <Icon size={24} color={tech.color} />
                 <span style={{ fontSize: 16, fontWeight: 600, color: '#fff' }}>{tech.name}</span>
@@ -140,7 +140,7 @@ export default function TechStack() {
                 display: 'flex', alignItems: 'center', gap: 12,
                 padding: '1rem 2rem', borderRadius: 16,
                 border: '1px solid var(--border)',
-                background: 'rgba(255,255,255,0.02)'
+                background: 'var(--bg-card)'
               }}>
                 <Icon size={24} color={tech.color} />
                 <span style={{ fontSize: 16, fontWeight: 600, color: '#fff' }}>{tech.name}</span>

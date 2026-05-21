@@ -65,7 +65,7 @@ export default function Process() {
                 <div style={{ position: 'relative', flexShrink: 0, marginTop: 8 }}>
                   <div style={{
                     width: 40, height: 40, borderRadius: '50%',
-                    background: '#111', border: '1px solid rgba(255,255,255,0.08)',
+                    background: 'var(--bg-card)', border: '1px solid var(--border)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center'
                   }}>
                     <span style={{ fontSize: 11, color: '#86868B', fontFamily: 'monospace' }}>{s.n}</span>

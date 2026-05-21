@@ -38,8 +38,8 @@ export default function Home() {
         <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 0, pointerEvents: 'none' }}>
           {isMobile ? (
             <div style={{ width: '100%', height: '100%', background: mode === 'light' ? 'radial-gradient(circle at 50% 0%, rgba(0,255,178,0.1) 0%, rgba(245,245,247,1) 60%)' : 'radial-gradient(circle at 50% 0%, rgba(0,255,178,0.15) 0%, rgba(0,0,0,1) 60%)' }}>
-              <div className="qp-pulse-dot" style={{ position: 'absolute', top: '20%', left: '10%', width: 300, height: 300, background: 'rgba(0,255,178,0.1)', filter: 'blur(100px)', borderRadius: '50%' }} />
-              <div className="qp-pulse-dot" style={{ position: 'absolute', bottom: '20%', right: '10%', width: 250, height: 250, background: 'rgba(168,85,247,0.08)', filter: 'blur(90px)', borderRadius: '50%', animationDelay: '1s' }} />
+              <div className="qp-pulse-dot" style={{ position: 'absolute', top: '20%', left: '10%', width: 300, height: 300, background: mode === 'light' ? 'rgba(0,184,148,0.3)' : 'rgba(0,255,178,0.1)', filter: 'blur(100px)', borderRadius: '50%' }} />
+              <div className="qp-pulse-dot" style={{ position: 'absolute', bottom: '20%', right: '10%', width: 250, height: 250, background: mode === 'light' ? 'rgba(147,51,234,0.2)' : 'rgba(168,85,247,0.08)', filter: 'blur(90px)', borderRadius: '50%', animationDelay: '1s' }} />
               <div style={{ position: 'absolute', inset: 0, backgroundImage: mode === 'light' ? 'radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px)' : 'radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '32px 32px', opacity: 0.5 }} />
             </div>
           ) : (

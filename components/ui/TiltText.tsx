@@ -54,7 +54,6 @@ export default function TiltText() {
         style={{ 
           rotateX, 
           rotateY,
-          textShadow: '0 10px 30px rgba(0,0,0,0.8)',
           marginBottom: 32,
           display: 'inline-block'
         }}

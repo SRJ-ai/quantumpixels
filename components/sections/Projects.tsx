@@ -103,7 +103,7 @@ export default function Projects() {
               onMouseEnter={(e) => {
                 setHoveredIndex(i)
                 displacement.set(20) // trigger liquid ripple
-                e.currentTarget.style.background = 'rgba(255,255,255,0.02)';
+                e.currentTarget.style.background = 'var(--bg-card)';
                 const title = e.currentTarget.querySelector('.proj-title') as HTMLElement;
                 if (title) title.style.color = colors.primary;
                 const arrow = e.currentTarget.querySelector('.proj-arrow') as HTMLElement;

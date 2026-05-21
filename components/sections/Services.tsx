@@ -73,7 +73,7 @@ export default function Services() {
                 <div style={{
                   width: 40, height: 40, borderRadius: 12,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  background: 'rgba(255,255,255,0.04)', border: '1px solid var(--border)',
+                  background: 'var(--bg-card)', border: '1px solid var(--border)',
                   marginBottom: 24,
                 }}>
                   <Icon size={18} color="#00FFB2" />
@@ -89,7 +89,7 @@ export default function Services() {
                   {s.features.map(f => (
                     <span key={f} style={{
                       fontSize: 11, color: '#86868B', padding: '6px 12px', borderRadius: 999,
-                      background: 'rgba(255,255,255,0.04)', border: '1px solid var(--border)',
+                      background: 'var(--bg-card)', border: '1px solid var(--border)',
                     }}>
                       {f}
                     </span>

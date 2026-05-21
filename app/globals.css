@@ -18,6 +18,9 @@
   --accent:         #00FFB2;
   --accent-dim:     rgba(0, 255, 178, 0.08);
   --accent-border:  rgba(0, 255, 178, 0.15);
+  --gradient-1:     #00FFB2;
+  --gradient-2:     #00D4AA;
+  --gradient-3:     #00B894;
 
   /* Text hierarchy */
   --text-primary:   #F5F5F7;
@@ -45,6 +48,9 @@ html.light {
   --text-tertiary:  #86868B;
   --border:         rgba(0, 0, 0, 0.08);
   --border-hover:   rgba(0, 0, 0, 0.16);
+  --gradient-1:     #00B894;
+  --gradient-2:     #00997A;
+  --gradient-3:     #007A61;
 }
 
 @theme inline {
@@ -119,7 +125,7 @@ body {
 
 /* ── Gradient text ──────────────────────────────── */
 .qp-gradient {
-  background: linear-gradient(135deg, #00FFB2 0%, #00D4AA 50%, #00B894 100%);
+  background: linear-gradient(135deg, var(--gradient-1) 0%, var(--gradient-2) 50%, var(--gradient-3) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

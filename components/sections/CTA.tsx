@@ -79,12 +79,12 @@ export default function CTA() {
             rel="noopener noreferrer"
             style={{
               padding: '0.875rem 2rem', borderRadius: 999,
-              border: '1px solid rgba(255,255,255,0.15)', color: '#F5F5F7',
+              border: '1px solid var(--border)', color: '#F5F5F7',
               fontSize: 14, fontWeight: 600, textDecoration: 'none',
               transition: 'border-color 0.3s, background 0.3s',
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)' }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.background = 'transparent' }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--border-hover)'; e.currentTarget.style.background = 'var(--bg-card)' }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.background = 'transparent' }}
           >
             Book a Call
           </a>

@@ -36,8 +36,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: 10, marginBottom: 24 }}
         >
-          <span className="qp-pulse-dot" style={{ width: 6, height: 6, borderRadius: '50%', background: '#00FFB2', display: 'inline-block' }} />
-          <span className="qp-overline" style={{ color: '#F5F5F7', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>Student-Founded · Engineering the Future</span>
+          <span className="qp-pulse-dot" style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--accent)', display: 'inline-block' }} />
+          <span className="qp-overline" style={{ color: 'var(--text-primary)' }}>Student-Founded · Engineering the Future</span>
         </motion.div>
 
         <motion.div
@@ -53,7 +53,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
           className="qp-body"
-          style={{ maxWidth: 560, margin: '0 auto 32px', color: '#E5E5EA', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}
+          style={{ maxWidth: 560, margin: '0 auto 32px', color: 'var(--text-secondary)' }}
         >
           Education. Gaming. Software Innovation — engineered with precision,
           designed with purpose, built by the next generation.
@@ -69,12 +69,12 @@ export default function Hero() {
             href="#services"
             style={{
               padding: '0.875rem 2rem', borderRadius: 999,
-              background: '#F5F5F7', color: '#000',
+              background: 'var(--text-primary)', color: 'var(--bg-primary)',
               fontSize: 14, fontWeight: 600, textDecoration: 'none',
-              transition: 'background 0.3s',
+              transition: 'transform 0.2s',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = '#fff')}
-            onMouseLeave={(e) => (e.currentTarget.style.background = '#F5F5F7')}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
           >
             Explore Our Work
           </a>
@@ -82,13 +82,13 @@ export default function Hero() {
             href="#contact"
             style={{
               padding: '0.875rem 2rem', borderRadius: 999,
-              border: '1px solid rgba(255,255,255,0.3)', color: '#F5F5F7',
+              border: '1px solid var(--border)', color: 'var(--text-primary)',
               fontSize: 14, fontWeight: 600, textDecoration: 'none',
-              background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(10px)',
-              transition: 'border-color 0.3s, background 0.3s',
+              background: 'var(--bg-glass)', backdropFilter: 'blur(10px)',
+              transition: 'border-color 0.3s, background 0.3s, transform 0.2s',
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.6)'; e.currentTarget.style.background = 'rgba(0,0,0,0.6)' }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.background = 'rgba(0,0,0,0.4)' }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--text-secondary)'; e.currentTarget.style.background = 'var(--bg-glass-heavy)'; e.currentTarget.style.transform = 'scale(1.05)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.background = 'var(--bg-glass)'; e.currentTarget.style.transform = 'scale(1)'; }}
           >
             Start a Project
           </a>
@@ -102,7 +102,7 @@ export default function Hero() {
         style={{ position: 'absolute', bottom: 40, left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}
       >
         <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}>
-          <ArrowDown size={16} color="#fff" />
+          <ArrowDown size={16} color="currentColor" style={{ color: 'var(--text-primary)' }} />
         </motion.div>
       </motion.div>
     </section>

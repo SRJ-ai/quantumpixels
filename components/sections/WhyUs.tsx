@@ -61,7 +61,7 @@ export default function WhyUs() {
                 background: '#0a0a0a',
                 transition: 'background 0.3s'
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = '#111')}
+              onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--bg-card)')}
               onMouseLeave={(e) => (e.currentTarget.style.background = '#0a0a0a')}
             >
               <span style={{ fontSize: 12, color: '#424245', fontFamily: 'monospace', marginBottom: 16, display: 'block' }}>
