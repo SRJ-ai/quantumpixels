@@ -4,7 +4,7 @@ import { useRef, useMemo, useEffect, useState } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import { Float, MeshTransmissionMaterial, Environment, PerformanceMonitor } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
-import { Physics, RigidBody, InstancedRigidBodies, BallCollider, CuboidCollider, InstancedRigidBodyApi } from '@react-three/rapier'
+import { Physics, RigidBody, InstancedRigidBodies, BallCollider, CuboidCollider } from '@react-three/rapier'
 import * as THREE from 'three'
 import { useTheme } from '@/components/ThemeContext'
 
@@ -173,7 +173,7 @@ function GeometricArchitecture() {
 // 4. Interactive Physics Orbs (Services area)
 function PhysicsOrbs() {
   const { colors } = useTheme()
-  const rigidBodies = useRef<InstancedRigidBodyApi>(null)
+  const rigidBodies = useRef<any>(null)
   const orbs = useMemo(() => {
     return Array.from({ length: 30 }).map(() => ({
       position: [(Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20, (Math.random() - 0.5) * 10 - 60] as [number, number, number],
