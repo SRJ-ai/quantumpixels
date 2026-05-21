@@ -48,13 +48,13 @@ export default function MobileLoadingScreen({ onComplete }: MobileLoadingScreenP
   }, [])
 
   return (
-    <div className="mobile-layout fixed inset-0 z-[9999] bg-mobile-bg text-mobile-text flex flex-col justify-between p-6">
+    <div className="mobile-layout fixed inset-0 z-[9999] bg-mobile-bg text-mobile-text flex flex-col justify-between p-6 safe-pt safe-pb">
       {/* Top Left Label */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="text-xs text-mobile-muted uppercase tracking-[0.3em]"
+        className="gpu-accelerate text-xs text-mobile-muted uppercase tracking-[0.3em]"
       >
         QuantumPixels
       </motion.div>
@@ -68,7 +68,7 @@ export default function MobileLoadingScreen({ onComplete }: MobileLoadingScreenP
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: 'easeInOut' }}
-            className="text-4xl sm:text-6xl font-display italic text-mobile-text/80"
+            className="gpu-accelerate text-4xl sm:text-6xl font-display italic text-mobile-text/80"
             style={{ fontFamily: 'var(--font-instrument)' }}
           >
             {WORDS[wordIndex]}

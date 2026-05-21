@@ -19,7 +19,7 @@ export default function MobileFooter() {
   }, [])
 
   return (
-    <footer className="mobile-layout relative bg-mobile-bg pt-16 pb-8 overflow-hidden border-t border-mobile-stroke">
+    <footer className="mobile-layout relative bg-mobile-bg pt-16 pb-8 safe-pb overflow-hidden border-t border-mobile-stroke">
       
       {/* Flipped Background Video */}
       <div className="absolute inset-0 z-0 scale-y-[-1]">

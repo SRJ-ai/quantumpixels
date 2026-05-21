@@ -20,6 +20,8 @@ export default function MobileExplorations() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
+    ScrollTrigger.config({ ignoreMobileResize: true })
+    ScrollTrigger.normalizeScroll(true)
 
     const section = sectionRef.current
     const pin = pinRef.current

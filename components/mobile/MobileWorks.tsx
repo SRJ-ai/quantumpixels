@@ -67,9 +67,9 @@ export default function MobileWorks() {
                 </div>
               </div>
 
-              {/* Mobile Default Label (Since touch doesn't hover) */}
-              <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center group-hover:opacity-0 transition-opacity duration-300">
-                <div className="bg-mobile-bg/80 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full text-mobile-text font-display italic" style={{ fontFamily: 'var(--font-instrument)' }}>
+              {/* Mobile Default Label */}
+              <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center transition-opacity duration-300">
+                <div className="gpu-accelerate bg-mobile-bg/70 backdrop-blur-xl border border-white/20 px-5 py-2.5 rounded-full text-mobile-text font-display italic text-lg shadow-xl" style={{ fontFamily: 'var(--font-instrument)' }}>
                   {p.title}
                 </div>
               </div>

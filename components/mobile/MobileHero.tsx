@@ -58,8 +58,8 @@ export default function MobileHero() {
       </div>
 
       {/* Navbar (Pill) */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4">
-        <div className={`inline-flex items-center rounded-full backdrop-blur-md border border-white/10 bg-mobile-surface px-2 py-2 transition-shadow duration-300 ${isNavScrolled ? 'shadow-md shadow-black/50' : ''}`}>
+      <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 safe-pt pt-4">
+        <div className={`gpu-accelerate inline-flex items-center rounded-full backdrop-blur-md border border-white/10 bg-mobile-surface px-2 py-2 transition-shadow duration-300 ${isNavScrolled ? 'shadow-md shadow-black/50' : ''}`}>
           {/* Logo */}
           <div className="group relative w-9 h-9 flex items-center justify-center rounded-full cursor-pointer transition-transform duration-300 hover:scale-110">
             <div className="absolute inset-0 rounded-full p-[1px] mobile-accent-gradient" style={{ animationDirection: 'normal' }}>
@@ -94,11 +94,11 @@ export default function MobileHero() {
 
       {/* Hero Content */}
       <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center px-4 pt-16">
-        <div className="blur-in text-xs text-mobile-muted uppercase tracking-[0.3em] mb-6">
+        <div className="blur-in gpu-accelerate text-xs text-mobile-muted uppercase tracking-[0.3em] mb-6">
           EST. 2024
         </div>
         
-        <h1 className="name-reveal text-6xl sm:text-8xl font-display italic leading-[0.9] tracking-tight text-mobile-text mb-4" style={{ fontFamily: 'var(--font-instrument)' }}>
+        <h1 className="name-reveal gpu-accelerate text-6xl sm:text-8xl font-display italic leading-[0.9] tracking-tight text-mobile-text mb-4" style={{ fontFamily: 'var(--font-instrument)' }}>
           Quantum Pixels
         </h1>
         
