@@ -150,7 +150,7 @@ export default function TechStack() {
         </ParallaxText>
       </div>
 
-        <div className="qp-divider" style={{ marginTop: 80 }} />
+        <div className="qp-divider" style={{ marginTop: 48 }} />
       </div>
     </section>
   )

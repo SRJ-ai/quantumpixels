@@ -34,7 +34,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginBottom: 32 }}
+          style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: 10, marginBottom: 24 }}
         >
           <span className="qp-pulse-dot" style={{ width: 6, height: 6, borderRadius: '50%', background: '#00FFB2', display: 'inline-block' }} />
           <span className="qp-overline" style={{ color: '#F5F5F7', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>Student-Founded · Engineering the Future</span>
@@ -53,7 +53,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
           className="qp-body"
-          style={{ maxWidth: 560, margin: '0 auto 48px', color: '#E5E5EA', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}
+          style={{ maxWidth: 560, margin: '0 auto 32px', color: '#E5E5EA', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}
         >
           Education. Gaming. Software Innovation — engineered with precision,
           designed with purpose, built by the next generation.

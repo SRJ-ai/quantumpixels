@@ -59,7 +59,7 @@ export default function Process() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.5, delay: i * 0.05 }}
-                style={{ display: 'flex', gap: 32, alignItems: 'flex-start' }}
+                style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}
               >
                 {/* Dot */}
                 <div style={{ position: 'relative', flexShrink: 0, marginTop: 8 }}>
@@ -84,7 +84,7 @@ export default function Process() {
           </div>
         </div>
 
-        <div className="qp-divider" style={{ marginTop: 80 }} />
+        <div className="qp-divider" style={{ marginTop: 48 }} />
       </div>
     </section>
   )

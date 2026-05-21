@@ -50,7 +50,7 @@ export default function Testimonials() {
           <span className="qp-gradient">mentors &amp; peers.</span>
         </motion.h2>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
           {testimonials.map((t, i) => (
             <motion.blockquote
               key={t.name}
@@ -58,7 +58,7 @@ export default function Testimonials() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
               className="qp-card"
-              style={{ padding: 32, display: 'flex', flexDirection: 'column' }}
+              style={{ padding: '24px 20px', display: 'flex', flexDirection: 'column' }}
             >
               <p style={{ fontSize: 14, color: '#86868B', lineHeight: 1.6, flex: 1, marginBottom: 32, fontStyle: 'italic' }}>
                 &ldquo;{t.text}&rdquo;
@@ -71,7 +71,7 @@ export default function Testimonials() {
           ))}
         </div>
 
-        <div className="qp-divider" style={{ marginTop: 80 }} />
+        <div className="qp-divider" style={{ marginTop: 48 }} />
       </div>
     </section>
   )

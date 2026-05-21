@@ -77,7 +77,7 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          style={{ display: 'flex', gap: 64, flexWrap: 'wrap' }}
+          style={{ display: 'flex', gap: '32px 48px', flexWrap: 'wrap' }}
         >
           {stats.map((s) => (
             <div key={s.label}>
@@ -89,7 +89,7 @@ export default function About() {
           ))}
         </motion.div>
 
-        <div className="qp-divider" style={{ marginTop: 80 }} />
+        <div className="qp-divider" style={{ marginTop: 48 }} />
       </div>
     </section>
   )

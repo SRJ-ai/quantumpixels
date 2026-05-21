@@ -44,7 +44,7 @@ export default function WhyUs() {
         {/* Grid */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
           gap: 1,
           background: 'rgba(255,255,255,0.06)',
           borderRadius: 16,
@@ -57,7 +57,7 @@ export default function WhyUs() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + i * 0.06 }}
               style={{
-                padding: 32,
+                padding: '24px 20px',
                 background: '#0a0a0a',
                 transition: 'background 0.3s'
               }}
@@ -75,7 +75,7 @@ export default function WhyUs() {
           ))}
         </div>
 
-        <div className="qp-divider" style={{ marginTop: 80 }} />
+        <div className="qp-divider" style={{ marginTop: 48 }} />
       </div>
     </section>
   )

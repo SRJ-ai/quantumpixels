@@ -92,7 +92,7 @@ export default function Projects() {
                 display: 'flex',
                 flexDirection: 'column',
                 borderTop: '1px solid rgba(255,255,255,0.06)',
-                padding: '32px 0',
+                padding: '24px 0',
                 cursor: 'pointer',
                 transition: 'background 0.3s',
                 position: 'relative',
@@ -125,7 +125,7 @@ export default function Projects() {
                 }
               }}
             >
-              <div style={{ display: 'flex', gap: 24, padding: '0 24px' }}>
+              <div style={{ display: 'flex', gap: 16, padding: '0 8px' }}>
                 {/* Number */}
                 <span style={{ fontSize: 12, color: '#424245', fontFamily: 'monospace', paddingTop: 4, width: 24, flexShrink: 0 }}>
                   0{i + 1}
@@ -159,7 +159,7 @@ export default function Projects() {
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} />
         </div>
 
-        <div className="qp-divider" style={{ marginTop: 80 }} />
+        <div className="qp-divider" style={{ marginTop: 48 }} />
       </div>
     </section>
   )

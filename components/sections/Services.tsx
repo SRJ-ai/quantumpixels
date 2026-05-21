@@ -58,7 +58,7 @@ export default function Services() {
         </motion.h2>
 
         {/* Cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
           {services.map((s, i) => {
             const Icon = s.Icon
             return (
@@ -68,7 +68,7 @@ export default function Services() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.15 + i * 0.1 }}
                 className="qp-card"
-                style={{ padding: 32, display: 'flex', flexDirection: 'column' }}
+                style={{ padding: '24px 20px', display: 'flex', flexDirection: 'column' }}
               >
                 <div style={{
                   width: 40, height: 40, borderRadius: 12,
@@ -107,7 +107,7 @@ export default function Services() {
           })}
         </div>
 
-        <div className="qp-divider" style={{ marginTop: 80 }} />
+        <div className="qp-divider" style={{ marginTop: 48 }} />
       </div>
     </section>
   )

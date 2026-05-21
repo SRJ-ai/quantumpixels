@@ -44,7 +44,7 @@ export default function Vision() {
           gaming, and software innovation merge — empowering the next generation.
         </motion.p>
 
-        <div className="qp-divider" style={{ marginTop: 80 }} />
+        <div className="qp-divider" style={{ marginTop: 48 }} />
       </div>
     </section>
   )
