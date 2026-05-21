@@ -34,56 +34,17 @@
 @theme inline {
   --color-background: #000000;
   --color-foreground: #F5F5F7;
-
-  /* Mobile Layout Colors */
-  --color-mobile-bg: hsl(0 0% 4%);
-  --color-mobile-surface: hsl(0 0% 8%);
-  --color-mobile-text: hsl(0 0% 96%);
-  --color-mobile-muted: hsl(0 0% 53%);
-  --color-mobile-stroke: hsl(0 0% 12%);
-  --color-mobile-accent: hsl(0 0% 96%);
-
-  /* Mobile Fonts */
-  --font-display: var(--font-instrument), serif;
-
-  /* Mobile Animations */
-  --animate-scroll-down: scroll-down 1.5s ease-in-out infinite;
-  --animate-role-fade-in: role-fade-in 0.4s ease-out;
-  --animate-gradient-shift: gradient-shift 6s ease infinite;
-
-  @keyframes scroll-down {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(200%); }
-  }
-  @keyframes role-fade-in {
-    0% { opacity: 0; transform: translateY(8px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes gradient-shift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
 }
 
 /* ── Reset ──────────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-}
-
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
 body {
-  margin: 0;
-  padding: 0;
   background: var(--bg-primary);
-  background-color: var(--color-mobile-bg, #000);
   color: var(--text-primary);
   font-family: var(--body-font);
   overflow-x: hidden;
-  min-height: 100vh;
-  overscroll-behavior-y: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -148,11 +109,6 @@ body {
   background-clip: text;
 }
 
-.mobile-accent-gradient {
-  background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
-  background-size: 200% auto;
-}
-
 /* ── Glass (Apple-style blur) ───────────────────── */
 .qp-glass {
   background: rgba(255, 255, 255, 0.04);
@@ -212,19 +168,4 @@ body {
 .qp-section {
   padding-top: clamp(4rem, 10vw, 8rem);
   padding-bottom: clamp(4rem, 10vw, 8rem);
-}
-
-/* ── Mobile Utilities ───────────────────────────── */
-.gpu-accelerate {
-  transform: translateZ(0);
-  will-change: transform;
-  backface-visibility: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-.safe-pt {
-  padding-top: max(env(safe-area-inset-top), 1rem);
-}
-.safe-pb {
-  padding-bottom: max(env(safe-area-inset-bottom), 1rem);
 }

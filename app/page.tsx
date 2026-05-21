@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { Canvas } from '@react-three/fiber'
 import HybridScene from '@/components/ui/HybridScene'
 import SmoothScroll from '@/components/SmoothScroll'
-import MobileLanding from '@/components/mobile/MobileLanding'
 
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/sections/Hero'
@@ -29,20 +28,24 @@ export default function Home() {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  if (isMobile) {
-    return <MobileLanding />
-  }
-
   return (
     <SmoothScroll>
       <main style={{ position: 'relative', width: '100%', minHeight: '100vh', background: '#000' }}>
         
-        {/* Fixed 3D Canvas Background */}
+        {/* Premium Mobile Fallback / Desktop 3D Canvas */}
         <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 0, pointerEvents: 'none' }}>
-          <Canvas camera={{ position: [0, 0, 5], fov: 60 }} dpr={[1, 2]}>
-            <color attach="background" args={['#000000']} />
-            <HybridScene />
-          </Canvas>
+          {isMobile ? (
+            <div style={{ width: '100%', height: '100%', background: 'radial-gradient(circle at 50% 0%, rgba(0,255,178,0.15) 0%, rgba(0,0,0,1) 60%)' }}>
+              <div className="qp-pulse-dot" style={{ position: 'absolute', top: '20%', left: '10%', width: 300, height: 300, background: 'rgba(0,255,178,0.1)', filter: 'blur(100px)', borderRadius: '50%' }} />
+              <div className="qp-pulse-dot" style={{ position: 'absolute', bottom: '20%', right: '10%', width: 250, height: 250, background: 'rgba(168,85,247,0.08)', filter: 'blur(90px)', borderRadius: '50%', animationDelay: '1s' }} />
+              <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '32px 32px', opacity: 0.5 }} />
+            </div>
+          ) : (
+            <Canvas camera={{ position: [0, 0, 5], fov: 60 }} dpr={[1, 2]}>
+              <color attach="background" args={['#000000']} />
+              <HybridScene />
+            </Canvas>
+          )}
         </div>
         
         {/* Native HTML Scroll Content */}
