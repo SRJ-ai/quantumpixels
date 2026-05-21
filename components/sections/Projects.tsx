@@ -58,7 +58,7 @@ export default function Projects() {
         </filter>
       </svg>
       <div ref={ref} style={{ maxWidth: 900, margin: '0 auto', padding: '0 1.5rem', position: 'relative' }}>
-        <div style={{ position: 'absolute', inset: -20, background: 'rgba(5,8,22,0.65)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', zIndex: -1, pointerEvents: 'none', borderRadius: 24, border: '1px solid rgba(255,255,255,0.05)' }} />
+        <div style={{ position: 'absolute', inset: -20, background: 'var(--bg-glass)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', zIndex: -1, pointerEvents: 'none', borderRadius: 24, border: '1px solid var(--border)' }} />
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -91,7 +91,7 @@ export default function Projects() {
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                borderTop: '1px solid rgba(255,255,255,0.06)',
+                borderTop: '1px solid var(--border)',
                 padding: '24px 0',
                 cursor: 'pointer',
                 transition: 'background 0.3s',
@@ -156,7 +156,7 @@ export default function Projects() {
               </div>
             </motion.div>
           ))}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} />
+          <div style={{ borderTop: '1px solid var(--border)' }} />
         </div>
 
         <div className="qp-divider" style={{ marginTop: 48 }} />

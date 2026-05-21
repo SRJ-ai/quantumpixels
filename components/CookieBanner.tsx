@@ -60,7 +60,7 @@ export default function CookieBanner() {
               onClick={acceptCookies}
               style={{
                 padding: '10px 20px',
-                background: '#00FFB2',
+                background: 'var(--accent)',
                 color: '#000',
                 border: 'none',
                 borderRadius: 8,

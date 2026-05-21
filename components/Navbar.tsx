@@ -34,10 +34,10 @@ export default function Navbar() {
           right: 0,
           zIndex: 50,
           padding: scrolled ? '0.75rem 0' : '1.25rem 0',
-          background: scrolled ? 'rgba(0,0,0,0.7)' : 'transparent',
+          background: scrolled ? 'var(--bg-glass)' : 'transparent',
           backdropFilter: scrolled ? 'blur(40px) saturate(180%)' : 'none',
           WebkitBackdropFilter: scrolled ? 'blur(40px) saturate(180%)' : 'none',
-          borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent',
+          borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
           transition: 'padding 0.5s, background 0.5s, border-color 0.5s, backdrop-filter 0.5s',
         }}
       >
@@ -47,12 +47,12 @@ export default function Navbar() {
             <div style={{
               width: 32, height: 32, borderRadius: 8,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',
+              background: 'var(--bg-elevated)', border: '1px solid var(--border)',
               overflow: 'hidden'
             }}>
               <img src="/quantumpixels/logo.png" alt="Quantum Pixels Logo" style={{ width: 32, height: 32, objectFit: 'cover' }} />
             </div>
-            <span style={{ fontSize: 16, fontWeight: 600, letterSpacing: '-0.01em', color: '#F5F5F7', fontFamily: 'var(--heading-font)' }}>
+            <span style={{ fontSize: 16, fontWeight: 600, letterSpacing: '-0.01em', color: 'var(--text-primary)', fontFamily: 'var(--heading-font)' }}>
               Quantum<span className="qp-gradient" style={{ color: colors.primary }}>Pixels</span>
             </span>
           </a>
@@ -66,9 +66,9 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.08 * i + 0.2, duration: 0.4 }}
-                style={{ fontSize: 13, color: '#86868B', textDecoration: 'none', transition: 'color 0.3s' }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#F5F5F7')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#86868B')}
+                style={{ fontSize: 13, color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
               >
                 {l.label}
               </motion.a>
@@ -124,7 +124,7 @@ export default function Navbar() {
           </motion.a>
 
           {/* Mobile toggle */}
-          <button className="flex md:hidden items-center justify-center" style={{ color: '#fff', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', cursor: 'pointer', padding: '8px', borderRadius: '8px' }}
+          <button className="flex md:hidden items-center justify-center" style={{ color: 'var(--text-primary)', background: 'var(--bg-elevated)', border: '1px solid var(--border)', cursor: 'pointer', padding: '8px', borderRadius: '8px' }}
             onClick={() => setOpen(!open)}
           >
             {open ? <X size={22} /> : <Menu size={22} />}
@@ -141,17 +141,17 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
             className="qp-glass"
-            style={{ position: 'fixed', top: 70, left: 16, right: 16, zIndex: 100, border: '1px solid rgba(255,255,255,0.1)', borderRadius: 16, overflow: 'hidden' }}
+            style={{ position: 'fixed', top: 70, left: 16, right: 16, zIndex: 100, border: '1px solid var(--border)', borderRadius: 16, overflow: 'hidden' }}
           >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 4, padding: 16, background: 'rgba(10,10,10,0.95)' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 4, padding: 16, background: 'var(--bg-glass-heavy)' }}>
               {links.map((l) => (
                 <a
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  style={{ color: '#86868B', textDecoration: 'none', padding: '0.625rem 0.75rem', borderRadius: 8, fontSize: 14, transition: 'color 0.2s' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#F5F5F7')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#86868B')}
+                  style={{ color: 'var(--text-secondary)', textDecoration: 'none', padding: '0.625rem 0.75rem', borderRadius: 8, fontSize: 14, transition: 'color 0.2s' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
                 >
                   {l.label}
                 </a>

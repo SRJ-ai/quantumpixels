@@ -139,7 +139,7 @@ function GeometricArchitecture({ isMobile }: { isMobile: boolean }) {
     return arr
   }, [])
 
-  const { colors } = useTheme()
+  const { colors, mode } = useTheme()
 
   useFrame((state, delta) => {
     if (groupRef.current) {
@@ -153,16 +153,16 @@ function GeometricArchitecture({ isMobile }: { isMobile: boolean }) {
         <mesh key={i} position={props.position} scale={props.scale} rotation={props.rotation}>
           <boxGeometry args={[1, 1, 1]} />
           <meshStandardMaterial 
-            color="#050816" 
+            color={mode === 'light' ? "#ffffff" : "#050816"} 
             metalness={0.8} 
             roughness={0.2} 
-            emissive={i % 5 === 0 ? colors.secondary : "#000000"}
+            emissive={i % 5 === 0 ? colors.secondary : (mode === 'light' ? "#eeeeee" : "#000000")}
             emissiveIntensity={0.5}
           />
           {/* Wireframe edges for cyberpunk feel */}
           <mesh>
             <boxGeometry args={[1.001, 1.001, 1.001]} />
-            <meshBasicMaterial color={i % 3 === 0 ? colors.primary : "#333333"} wireframe transparent opacity={0.3} />
+            <meshBasicMaterial color={i % 3 === 0 ? colors.primary : (mode === 'light' ? "#dddddd" : "#333333")} wireframe transparent opacity={0.3} />
           </mesh>
         </mesh>
       ))}
@@ -174,7 +174,7 @@ function GeometricArchitecture({ isMobile }: { isMobile: boolean }) {
 
 // 4. Interactive Physics Orbs (Services area)
 function PhysicsOrbs({ isMobile }: { isMobile: boolean }) {
-  const { colors } = useTheme()
+  const { colors, mode } = useTheme()
   const rigidBodies = useRef<any>(null)
   
   const count = isMobile ? 10 : 30
@@ -232,7 +232,7 @@ function PhysicsOrbs({ isMobile }: { isMobile: boolean }) {
         <instancedMesh args={[undefined, undefined, count]} receiveShadow castShadow>
           <icosahedronGeometry args={[1, isMobile ? 0 : 2]} />
           <meshStandardMaterial 
-            color="#050816" 
+            color={mode === 'light' ? "#ffffff" : "#050816"} 
             metalness={0.9} 
             roughness={0.1} 
             emissive={colors.primary}
@@ -273,7 +273,7 @@ function PointerCollider() {
 export default function HybridScene() {
   const [isMobile, setIsMobile] = useState(false)
   const { camera } = useThree()
-  const { colors } = useTheme()
+  const { colors, mode } = useTheme()
   const [scrollProgress, setScrollProgress] = useState(0)
   const [dpr, setDpr] = useState(1.5)
 
@@ -332,7 +332,7 @@ export default function HybridScene() {
       )}
 
       {/* Fog to blend the transitions between zones */}
-      <fog attach="fog" args={['#000000', 10, 60]} />
+      <fog attach="fog" args={[mode === 'light' ? '#F5F5F7' : '#000000', 10, 60]} />
     </PerformanceMonitor>
   )
 }

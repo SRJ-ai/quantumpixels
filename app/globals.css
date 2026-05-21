@@ -11,6 +11,8 @@
   --bg-elevated:    #0a0a0a;
   --bg-card:        #111111;
   --bg-card-hover:  #1a1a1a;
+  --bg-glass:       rgba(5,8,22,0.65);
+  --bg-glass-heavy: rgba(10,10,10,0.95);
 
   /* Brand accent — used sparingly */
   --accent:         #00FFB2;
@@ -36,6 +38,8 @@ html.light {
   --bg-elevated:    #FFFFFF;
   --bg-card:        #F9F9FB;
   --bg-card-hover:  #FFFFFF;
+  --bg-glass:       rgba(255,255,255,0.7);
+  --bg-glass-heavy: rgba(255,255,255,0.95);
   --text-primary:   #111111;
   --text-secondary: #424245;
   --text-tertiary:  #86868B;
@@ -173,7 +177,7 @@ body {
 /* ── Selection ──────────────────────────────────── */
 ::selection {
   background: rgba(0, 255, 178, 0.2);
-  color: #fff;
+  color: inherit;
 }
 
 /* ── Section spacing ────────────────────────────── */

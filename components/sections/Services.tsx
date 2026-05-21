@@ -35,7 +35,7 @@ export default function Services() {
   return (
     <section id="services" className="qp-section" style={{ background: 'transparent' }}>
       <div ref={ref} style={{ maxWidth: 900, margin: '0 auto', padding: '0 1.5rem', position: 'relative' }}>
-        <div style={{ position: 'absolute', inset: -20, background: 'rgba(5,8,22,0.65)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', zIndex: -1, pointerEvents: 'none', borderRadius: 24, border: '1px solid rgba(255,255,255,0.05)' }} />
+        <div style={{ position: 'absolute', inset: -20, background: 'var(--bg-glass)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', zIndex: -1, pointerEvents: 'none', borderRadius: 24, border: '1px solid var(--border)' }} />
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -73,7 +73,7 @@ export default function Services() {
                 <div style={{
                   width: 40, height: 40, borderRadius: 12,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)',
+                  background: 'rgba(255,255,255,0.04)', border: '1px solid var(--border)',
                   marginBottom: 24,
                 }}>
                   <Icon size={18} color="#00FFB2" />
@@ -89,7 +89,7 @@ export default function Services() {
                   {s.features.map(f => (
                     <span key={f} style={{
                       fontSize: 11, color: '#86868B', padding: '6px 12px', borderRadius: 999,
-                      background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)',
+                      background: 'rgba(255,255,255,0.04)', border: '1px solid var(--border)',
                     }}>
                       {f}
                     </span>
