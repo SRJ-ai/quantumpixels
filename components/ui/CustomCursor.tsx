@@ -51,8 +51,8 @@ export default function CustomCursor() {
           top: 0, left: 0,
           width: 32, height: 32,
           borderRadius: '50%',
-          backgroundColor: isHovering ? 'rgba(0, 255, 178, 0.1)' : 'transparent',
-          border: isHovering ? '1px solid rgba(0, 255, 178, 0.5)' : '1px solid rgba(255, 255, 255, 0.5)',
+          backgroundColor: isHovering ? 'transparent' : 'transparent',
+          border: isHovering ? '1px solid var(--text-primary)' : '1px solid var(--text-primary)',
           pointerEvents: 'none',
           zIndex: 9999,
           display: 'flex',
@@ -77,7 +77,7 @@ export default function CustomCursor() {
           style={{
             width: 6, height: 6,
             borderRadius: '50%',
-            backgroundColor: isHovering ? '#00FFB2' : '#ffffff',
+            backgroundColor: 'var(--text-primary)',
           }}
           animate={{
             scale: isHovering ? 0 : 1,
