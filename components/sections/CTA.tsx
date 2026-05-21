@@ -50,22 +50,22 @@ export default function CTA() {
           transition={{ duration: 0.5, delay: 0.4 }}
           style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: 16 }}
         >
-          <a
+          <motion.a
             href="mailto:hello@quantumpixels.dev"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 25 }}
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 10,
               padding: '0.875rem 2rem', borderRadius: 999,
-              background: '#F5F5F7', color: '#000',
+              background: 'var(--text-primary)', color: 'var(--bg-primary)',
               fontSize: 14, fontWeight: 600, textDecoration: 'none',
-              transition: 'background 0.3s',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#fff';
               const arrow = e.currentTarget.querySelector('.cta-arrow') as HTMLElement;
               if (arrow) arrow.style.transform = 'translateX(4px)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#F5F5F7';
               const arrow = e.currentTarget.querySelector('.cta-arrow') as HTMLElement;
               if (arrow) arrow.style.transform = 'translateX(0)';
             }}
@@ -73,16 +73,19 @@ export default function CTA() {
             Get in Touch
             <ArrowRight size={14} className="cta-arrow" style={{ transition: 'transform 0.2s' }} />
           </motion.a>
+          
           <motion.a
             href="https://cal.com"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 400, damping: 25 }}
             style={{
               padding: '0.875rem 2rem', borderRadius: 999,
-              border: '1px solid var(--border)', color: '#F5F5F7',
+              border: '1px solid var(--border)', color: 'var(--text-primary)',
               fontSize: 14, fontWeight: 600, textDecoration: 'none',
+              background: 'transparent',
               transition: 'border-color 0.3s, background 0.3s',
             }}
             onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--border-hover)'; e.currentTarget.style.background = 'var(--bg-card)' }}
