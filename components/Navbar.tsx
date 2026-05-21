@@ -115,13 +115,14 @@ export default function Navbar() {
             transition={{ delay: 0.6 }}
             className="hidden md:inline-flex"
             style={{
-              fontSize: 13, fontWeight: 500, color: colors.primary, textDecoration: 'none',
+              fontSize: 13, fontWeight: 500, color: 'var(--text-primary)', textDecoration: 'none',
               padding: '0.5rem 1.25rem', borderRadius: 999,
-              border: `1px solid ${colors.primary}40`,
+              border: `1px solid var(--border)`,
+              background: 'var(--bg-card)',
               transition: 'border-color 0.3s, background 0.3s',
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(0,255,178,0.4)'; e.currentTarget.style.background = 'rgba(0,255,178,0.06)' }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(0,255,178,0.2)'; e.currentTarget.style.background = 'transparent' }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--text-primary)'; e.currentTarget.style.background = 'var(--bg-elevated)' }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.background = 'var(--bg-card)' }}
           >
             Get in Touch
           </motion.a>

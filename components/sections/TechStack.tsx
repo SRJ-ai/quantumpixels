@@ -106,8 +106,8 @@ export default function TechStack() {
       {/* Scrolling Track 1 */}
       <div style={{ marginTop: 64, position: 'relative', overflow: 'hidden' }}>
         {/* Fade edges */}
-        <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 80, zIndex: 10, pointerEvents: 'none', background: 'linear-gradient(to right, #050816, transparent)' }} />
-        <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: 80, zIndex: 10, pointerEvents: 'none', background: 'linear-gradient(to left, #050816, transparent)' }} />
+        <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 80, zIndex: 10, pointerEvents: 'none', background: 'linear-gradient(to right, var(--bg-primary), transparent)' }} />
+        <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: 80, zIndex: 10, pointerEvents: 'none', background: 'linear-gradient(to left, var(--bg-primary), transparent)' }} />
         
         <ParallaxText baseVelocity={-2}>
           {techs.map((tech, i) => {
@@ -119,8 +119,8 @@ export default function TechStack() {
                 border: '1px solid var(--border)',
                 background: 'var(--bg-card)'
               }}>
-                <Icon size={24} color={tech.color} />
-                <span style={{ fontSize: 16, fontWeight: 600, color: '#fff' }}>{tech.name}</span>
+                <Icon size={24} color={tech.color === '#FFFFFF' ? 'var(--text-primary)' : tech.color} />
+                <span style={{ fontSize: 16, fontWeight: 600, color: 'var(--text-primary)' }}>{tech.name}</span>
               </div>
             )
           })}
@@ -129,8 +129,8 @@ export default function TechStack() {
 
       {/* Scrolling Track 2 (Reverse) */}
       <div style={{ marginTop: 32, position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 80, zIndex: 10, pointerEvents: 'none', background: 'linear-gradient(to right, #050816, transparent)' }} />
-        <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: 80, zIndex: 10, pointerEvents: 'none', background: 'linear-gradient(to left, #050816, transparent)' }} />
+        <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 80, zIndex: 10, pointerEvents: 'none', background: 'linear-gradient(to right, var(--bg-primary), transparent)' }} />
+        <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: 80, zIndex: 10, pointerEvents: 'none', background: 'linear-gradient(to left, var(--bg-primary), transparent)' }} />
         
         <ParallaxText baseVelocity={2}>
           {techs.map((tech, i) => {
@@ -142,8 +142,8 @@ export default function TechStack() {
                 border: '1px solid var(--border)',
                 background: 'var(--bg-card)'
               }}>
-                <Icon size={24} color={tech.color} />
-                <span style={{ fontSize: 16, fontWeight: 600, color: '#fff' }}>{tech.name}</span>
+                <Icon size={24} color={tech.color === '#FFFFFF' ? 'var(--text-primary)' : tech.color} />
+                <span style={{ fontSize: 16, fontWeight: 600, color: 'var(--text-primary)' }}>{tech.name}</span>
               </div>
             )
           }).reverse()}
