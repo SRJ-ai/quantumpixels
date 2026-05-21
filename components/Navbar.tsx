@@ -58,7 +58,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop links */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }} className="hidden md:flex">
+          <div style={{ alignItems: 'center', gap: '2rem' }} className="hidden md:flex">
             {links.map((l, i) => (
               <motion.a
                 key={l.href}
@@ -115,7 +115,7 @@ export default function Navbar() {
           </motion.a>
 
           {/* Mobile toggle */}
-          <button className="md:hidden" style={{ color: '#fff', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', cursor: 'pointer', padding: '8px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          <button className="flex md:hidden items-center justify-center" style={{ color: '#fff', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', cursor: 'pointer', padding: '8px', borderRadius: '8px' }}
             onClick={() => setOpen(!open)}
           >
             {open ? <X size={22} /> : <Menu size={22} />}
