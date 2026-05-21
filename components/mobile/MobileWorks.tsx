@@ -37,9 +37,10 @@ export default function MobileWorks() {
         {/* Grid */}
         <div className="flex flex-col gap-5">
           {PROJECTS.map((p, i) => (
-            <div 
+            <a 
               key={p.id}
-              className="group relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-mobile-surface border border-mobile-stroke"
+              href={`#project-${p.id}`}
+              className="group relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-mobile-surface border border-mobile-stroke block cursor-pointer"
             >
               {/* Background Image */}
               <img 
@@ -54,8 +55,8 @@ export default function MobileWorks() {
                 style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '4px 4px' }}
               />
 
-              {/* Hover Darken (mostly for tablets, touch devices don't hover well but nice to have) */}
-              <div className="absolute inset-0 bg-mobile-bg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm" />
+              {/* Hover Darken */}
+              <div className="absolute inset-0 bg-mobile-bg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm pointer-events-none" />
 
               {/* Hover Label */}
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
@@ -68,13 +69,13 @@ export default function MobileWorks() {
               </div>
 
               {/* Mobile Default Label */}
-              <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center transition-opacity duration-300">
+              <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center transition-opacity duration-300 pointer-events-none">
                 <div className="gpu-accelerate bg-mobile-bg/70 backdrop-blur-xl border border-white/20 px-5 py-2.5 rounded-full text-mobile-text font-display italic text-lg shadow-xl" style={{ fontFamily: 'var(--font-instrument)' }}>
                   {p.title}
                 </div>
               </div>
 
-            </div>
+            </a>
           ))}
         </div>
 

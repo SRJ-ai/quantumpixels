@@ -69,10 +69,10 @@ export default function MobileFooter() {
             <span className="text-xs text-mobile-muted">Available for projects</span>
           </div>
 
-          <div className="flex items-center gap-6 text-xs text-mobile-muted">
-            <a href="#" className="hover:text-mobile-text transition-colors">Twitter</a>
-            <a href="#" className="hover:text-mobile-text transition-colors">LinkedIn</a>
-            <a href="#" className="hover:text-mobile-text transition-colors">GitHub</a>
+          <div className="flex items-center gap-2 text-xs text-mobile-muted">
+            <a href="#" className="hover:text-mobile-text transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">Twitter</a>
+            <a href="#" className="hover:text-mobile-text transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">LinkedIn</a>
+            <a href="#" className="hover:text-mobile-text transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">GitHub</a>
           </div>
         </div>
 

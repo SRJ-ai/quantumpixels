@@ -84,10 +84,10 @@ export default function MobileExplorations() {
           A collection of experiments, prototypes, and conceptual designs.
         </p>
 
-        <button className="pointer-events-auto group relative rounded-full text-sm px-6 py-3 transition-transform hover:scale-105 border-2 border-mobile-stroke bg-mobile-bg text-mobile-text font-medium hover:border-transparent">
+        <a href="#" className="pointer-events-auto group relative rounded-full text-sm min-h-[44px] px-6 py-3 transition-transform hover:scale-105 border-2 border-mobile-stroke bg-mobile-bg text-mobile-text font-medium hover:border-transparent flex items-center justify-center">
           <span className="absolute inset-[-2px] rounded-full mobile-accent-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           <span className="relative z-10 block px-6 py-3 rounded-full -m-[14px] bg-mobile-bg">View Dribbble</span>
-        </button>
+        </a>
       </div>
 
       {/* Parallax Columns Layer */}

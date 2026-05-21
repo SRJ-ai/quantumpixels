@@ -36,27 +36,49 @@ export default function MobileJournal() {
 
         {/* Entries */}
         <div className="flex flex-col gap-4">
-          {ENTRIES.map((entry) => (
-            <div 
+          {ENTRIES.map((entry, i) => (
+            <a 
               key={entry.id}
-              className="flex items-center gap-4 p-3 bg-mobile-surface/30 hover:bg-mobile-surface border border-mobile-stroke rounded-[32px] transition-colors cursor-pointer"
+              href={`#journal-${entry.id}`}
+              className="group block min-h-[44px]"
             >
-              <img 
-                src={entry.src} 
-                alt={entry.title}
-                className="w-16 h-16 rounded-full object-cover shrink-0"
-              />
-              <div className="flex flex-col gap-1 flex-1 min-w-0">
-                <h3 className="text-mobile-text text-sm font-medium truncate">
-                  {entry.title}
-                </h3>
-                <div className="flex items-center gap-2 text-xs text-mobile-muted">
-                  <span>{entry.date}</span>
-                  <span className="w-1 h-1 rounded-full bg-mobile-stroke" />
-                  <span>{entry.readTime}</span>
+              <div className="flex items-center gap-4 py-4 border-b border-mobile-stroke/50">
+                
+                {/* Number */}
+                <span className="text-xs text-mobile-muted w-6 flex-shrink-0">
+                  0{entry.id}
+                </span>
+
+                {/* Thumbnail */}
+                <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-mobile-surface">
+                  <img 
+                    src={entry.src} 
+                    alt={entry.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
                 </div>
+
+                {/* Content */}
+                <div className="flex-1 min-w-0 flex flex-col justify-center">
+                  <h3 className="text-mobile-text font-medium text-lg leading-tight truncate mb-1" style={{ fontFamily: 'var(--font-inter)' }}>
+                    {entry.title}
+                  </h3>
+                  <div className="flex items-center gap-2 text-xs text-mobile-muted">
+                    <span>{entry.date}</span>
+                    <span className="w-1 h-1 rounded-full bg-mobile-stroke" />
+                    <span>{entry.readTime}</span>
+                  </div>
+                </div>
+
+                {/* Arrow */}
+                <div className="w-8 h-8 rounded-full border border-mobile-stroke flex items-center justify-center text-mobile-muted group-hover:text-mobile-text group-hover:border-mobile-text transition-colors flex-shrink-0">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </div>
+
               </div>
-            </div>
+            </a>
           ))}
         </div>
 

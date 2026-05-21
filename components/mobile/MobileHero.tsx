@@ -74,21 +74,21 @@ export default function MobileHero() {
           {/* Links */}
           <div className="flex items-center gap-1">
             {['Home', 'Work', 'Vision'].map((link, i) => (
-              <button key={link} className={`text-xs rounded-full px-3 py-1.5 transition-colors ${i === 0 ? 'text-mobile-text bg-mobile-stroke/50' : 'text-mobile-muted hover:text-mobile-text hover:bg-mobile-stroke/50'}`}>
+              <a key={link} href={`#${link.toLowerCase()}`} className={`text-xs rounded-full px-4 py-3 min-w-[44px] text-center transition-colors ${i === 0 ? 'text-mobile-text bg-mobile-stroke/50' : 'text-mobile-muted hover:text-mobile-text hover:bg-mobile-stroke/50'}`}>
                 {link}
-              </button>
+              </a>
             ))}
           </div>
 
           <div className="w-px h-5 bg-mobile-stroke mx-2" />
 
           {/* CTA */}
-          <button className="group relative text-xs rounded-full cursor-pointer">
+          <a href="mailto:hello@quantumpixels.dev" className="group relative text-xs rounded-full cursor-pointer min-h-[44px] flex items-center">
             <span className="absolute inset-[-2px] rounded-full mobile-accent-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="relative bg-mobile-surface backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-1 text-mobile-text">
+            <div className="relative bg-mobile-surface backdrop-blur-md px-4 py-3 rounded-full flex items-center gap-1 text-mobile-text">
               Say hi <span className="text-[10px]">↗</span>
             </div>
-          </button>
+          </a>
         </div>
       </nav>
 
@@ -124,16 +124,16 @@ export default function MobileHero() {
           Designing seamless digital interactions by focusing on the unique nuances which bring systems to life.
         </p>
 
-        <div className="blur-in flex items-center gap-4">
-          <button className="group relative rounded-full text-sm px-6 py-3 transition-transform hover:scale-105 bg-mobile-text text-mobile-bg font-medium">
+        <div className="blur-in flex items-center gap-4 relative z-20">
+          <a href="#works" className="group relative rounded-full text-sm min-h-[44px] px-6 py-3 transition-transform hover:scale-105 bg-mobile-text text-mobile-bg font-medium flex items-center justify-center">
             <span className="absolute inset-[-2px] rounded-full mobile-accent-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <span className="relative z-10 group-hover:text-mobile-text group-hover:bg-mobile-bg block px-6 py-3 rounded-full -m-[12px] transition-colors">See Works</span>
-          </button>
+          </a>
           
-          <button className="group relative rounded-full text-sm px-6 py-3 transition-transform hover:scale-105 border-2 border-mobile-stroke bg-transparent text-mobile-text font-medium hover:border-transparent">
+          <a href="mailto:hello@quantumpixels.dev" className="group relative rounded-full text-sm min-h-[44px] px-6 py-3 transition-transform hover:scale-105 border-2 border-mobile-stroke bg-transparent text-mobile-text font-medium hover:border-transparent flex items-center justify-center">
             <span className="absolute inset-[-2px] rounded-full mobile-accent-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <span className="relative z-10 group-hover:bg-mobile-bg block px-6 py-3 rounded-full -m-[14px] transition-colors">Reach out</span>
-          </button>
+          </a>
         </div>
       </div>
 
