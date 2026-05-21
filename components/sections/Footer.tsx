@@ -1,6 +1,6 @@
 'use client'
-
 import { Zap } from 'lucide-react'
+import Link from 'next/link'
 
 const links = [
   {
@@ -82,8 +82,8 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Quantum Pixels. All rights reserved.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
-            <a href="#" style={{ fontSize: 12, color: '#424245', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#424245')}>Privacy</a>
-            <a href="#" style={{ fontSize: 12, color: '#424245', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#424245')}>Terms</a>
+            <Link href="/privacy" style={{ fontSize: 12, color: '#424245', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#424245')}>Privacy Policy</Link>
+            <Link href="/terms" style={{ fontSize: 12, color: '#424245', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#424245')}>Terms of Service</Link>
           </div>
         </div>
       </div>
