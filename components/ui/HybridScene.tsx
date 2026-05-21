@@ -271,13 +271,17 @@ function PointerCollider() {
 
 // Master Controller
 export default function HybridScene() {
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+  const [isMobile, setIsMobile] = useState(false)
   const { camera } = useThree()
   const { colors } = useTheme()
   const [scrollProgress, setScrollProgress] = useState(0)
   const [dpr, setDpr] = useState(1.5)
 
   useEffect(() => {
+    setIsMobile(window.innerWidth < 768)
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', handleResize)
+    
     const handleScroll = () => {
       const scrollY = window.scrollY
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight
@@ -287,7 +291,10 @@ export default function HybridScene() {
     
     window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [])
 
   useFrame(() => {

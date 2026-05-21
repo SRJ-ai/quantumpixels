@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import Image from 'next/image'
 import { useTheme } from '@/components/ThemeContext'
 
 const links = [
@@ -51,7 +50,7 @@ export default function Navbar() {
               background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',
               overflow: 'hidden'
             }}>
-              <Image src="/logo.png" alt="Quantum Pixels Logo" width={32} height={32} style={{ objectFit: 'cover' }} />
+              <img src="/quantumpixels/logo.png" alt="Quantum Pixels Logo" style={{ width: 32, height: 32, objectFit: 'cover' }} />
             </div>
             <span style={{ fontSize: 16, fontWeight: 600, letterSpacing: '-0.01em', color: '#F5F5F7', fontFamily: 'var(--heading-font)' }}>
               Quantum<span className="qp-gradient" style={{ color: colors.primary }}>Pixels</span>
@@ -116,7 +115,7 @@ export default function Navbar() {
           </motion.a>
 
           {/* Mobile toggle */}
-          <button className="md:hidden" style={{ color: 'rgba(255,255,255,0.7)', background: 'none', border: 'none', cursor: 'pointer' }}
+          <button className="md:hidden" style={{ color: '#fff', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', cursor: 'pointer', padding: '8px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
             onClick={() => setOpen(!open)}
           >
             {open ? <X size={22} /> : <Menu size={22} />}
@@ -133,9 +132,9 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
             className="qp-glass"
-            style={{ position: 'fixed', top: 56, left: 0, right: 0, zIndex: 40, borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+            style={{ position: 'fixed', top: 70, left: 16, right: 16, zIndex: 100, border: '1px solid rgba(255,255,255,0.1)', borderRadius: 16, overflow: 'hidden' }}
           >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 4, padding: 16 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 4, padding: 16, background: 'rgba(10,10,10,0.95)' }}>
               {links.map((l) => (
                 <a
                   key={l.href}
