@@ -74,7 +74,7 @@ export default function Process() {
 
                 {/* Content */}
                 <div style={{ paddingBottom: 8 }}>
-                  <h3 style={{ fontSize: 18, fontWeight: 600, color: '#fff', fontFamily: 'var(--heading-font)', marginBottom: 4 }}>
+                  <h3 style={{ fontSize: 18, fontWeight: 600, color: 'var(--text-primary)', fontFamily: 'var(--heading-font)', marginBottom: 4 }}>
                     {s.title}
                   </h3>
                   <p style={{ fontSize: 14, color: '#86868B', lineHeight: 1.6, maxWidth: 440 }}>{s.desc}</p>

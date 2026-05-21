@@ -64,8 +64,8 @@ export default function Testimonials() {
                 &ldquo;{t.text}&rdquo;
               </p>
               <div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: '#fff' }}>{t.name}</div>
-                <div style={{ fontSize: 12, color: '#424245' }}>{t.role}</div>
+                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>{t.name}</div>
+                <div style={{ fontSize: 12, color: 'var(--text-secondary)' }}>{t.role}</div>
               </div>
             </motion.blockquote>
           ))}
