@@ -54,7 +54,7 @@ export default function Navbar() {
               <Image src="/quantumpixels/logo.png" alt="Quantum Pixels Logo" width={32} height={32} style={{ objectFit: 'cover' }} priority />
             </div>
             <span style={{ fontSize: 24, fontWeight: 400, letterSpacing: '-0.02em', color: 'var(--text-primary)', fontFamily: 'var(--font-instrument-serif)' }}>
-              Quantum Pixels<sup>®</sup>
+              Quantum Pixels
             </span>
           </a>
 

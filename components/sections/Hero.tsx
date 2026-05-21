@@ -46,21 +46,25 @@ export default function Hero() {
       }, 100)
     }
 
-    video.addEventListener('ended', handleEnded)
-    
-    // Start tracking when playing
-    video.addEventListener('play', () => {
+    const handlePlay = () => {
       animationFrameId = requestAnimationFrame(handleTimeUpdate)
-    })
+    }
 
-    // Attempt autoplay
-    video.play().catch(console.error)
+    video.addEventListener('ended', handleEnded)
+    video.addEventListener('play', handlePlay)
 
+    // Attempt autoplay immediately
+    video.play().catch((err) => console.log('Autoplay blocked:', err))
+
+    // Cleanup function
     return () => {
       cancelAnimationFrame(animationFrameId)
-      video.removeEventListener('ended', handleEnded)
+      if (video) {
+        video.removeEventListener('ended', handleEnded)
+        video.removeEventListener('play', handlePlay)
+      }
     }
-  }, [])
+  }, [mode]) // Add mode as dependency so it re-runs when switching to light mode
 
   return (
     <section
@@ -86,6 +90,7 @@ export default function Hero() {
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_083109_283f3553-e28f-428b-a723-d639c617eb2b.mp4"
             muted
             playsInline
+            autoPlay
             style={{
               width: '100%',
               height: '100%',
