@@ -3,10 +3,10 @@
 import { motion } from 'framer-motion'
 
 const PROJECTS = [
-  { id: 1, title: 'AI Automation', src: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop' },
-  { id: 2, title: 'Immersive Gaming', src: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop' },
-  { id: 3, title: 'Education Platforms', src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop' },
-  { id: 4, title: 'System Architecture', src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop' },
+  { id: 1, title: 'Quantum Learn', src: '/projects/quantum_learn_bg_1779347035399.png' },
+  { id: 2, title: 'PixelForge', src: '/projects/pixel_forge_bg_1779347051532.png' },
+  { id: 3, title: 'NeuralBoard', src: '/projects/neural_board_bg_1779347071411.png' },
+  { id: 4, title: 'CodeQuest', src: '/projects/code_quest_bg_1779347089933.png' },
 ]
 
 export default function MobileWorks() {

@@ -5,12 +5,12 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const EXPLORATIONS = [
-  { id: 1, src: 'https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?q=80&w=400&auto=format&fit=crop', speed: 0.5 },
-  { id: 2, src: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=400&auto=format&fit=crop', speed: 0.8 },
-  { id: 3, src: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=400&auto=format&fit=crop', speed: 0.6 },
-  { id: 4, src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=400&auto=format&fit=crop', speed: 0.9 },
-  { id: 5, src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=400&auto=format&fit=crop', speed: 0.4 },
-  { id: 6, src: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=400&auto=format&fit=crop', speed: 0.7 },
+  { id: 1, src: '/projects/quantum_learn_bg_1779347035399.png', speed: 0.5 },
+  { id: 2, src: '/projects/pixel_forge_bg_1779347051532.png', speed: 0.8 },
+  { id: 3, src: '/projects/neural_board_bg_1779347071411.png', speed: 0.6 },
+  { id: 4, src: '/projects/code_quest_bg_1779347089933.png', speed: 0.9 },
+  { id: 5, src: '/projects/quantum_learn_bg_1779347035399.png', speed: 0.4 },
+  { id: 6, src: '/projects/neural_board_bg_1779347071411.png', speed: 0.7 },
 ]
 
 export default function MobileExplorations() {

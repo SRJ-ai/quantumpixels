@@ -3,10 +3,10 @@
 import { motion } from 'framer-motion'
 
 const ENTRIES = [
-  { id: 1, title: 'The Future of Web3 Gaming', date: 'Oct 12', readTime: '5 min read', src: 'https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?q=80&w=200&auto=format&fit=crop' },
-  { id: 2, title: 'Engineering Scalable AI Systems', date: 'Sep 28', readTime: '8 min read', src: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=200&auto=format&fit=crop' },
-  { id: 3, title: 'Building Fluid Digital Interfaces', date: 'Sep 15', readTime: '4 min read', src: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=200&auto=format&fit=crop' },
-  { id: 4, title: 'Optimizing Next.js for the Edge', date: 'Aug 30', readTime: '6 min read', src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=200&auto=format&fit=crop' },
+  { id: 1, title: 'The Future of Web3 Gaming', date: 'Oct 12', readTime: '5 min read', src: '/projects/pixel_forge_bg_1779347051532.png' },
+  { id: 2, title: 'Engineering Scalable AI Systems', date: 'Sep 28', readTime: '8 min read', src: '/projects/quantum_learn_bg_1779347035399.png' },
+  { id: 3, title: 'Building Fluid Digital Interfaces', date: 'Sep 15', readTime: '4 min read', src: '/projects/neural_board_bg_1779347071411.png' },
+  { id: 4, title: 'Optimizing Next.js for the Edge', date: 'Aug 30', readTime: '6 min read', src: '/projects/code_quest_bg_1779347089933.png' },
 ]
 
 export default function MobileJournal() {
