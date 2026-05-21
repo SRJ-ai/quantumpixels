@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
 import { useTheme } from '@/components/ThemeContext'
 
 const links = [
@@ -17,7 +17,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen]         = useState(false)
   const { scrollY }             = useScroll()
-  const { theme, setTheme, colors } = useTheme()
+  const { theme, setTheme, colors, mode, toggleMode } = useTheme()
 
   useMotionValueEvent(scrollY, 'change', (v) => setScrolled(v > 50))
 
@@ -94,6 +94,15 @@ export default function Navbar() {
               ))}
             </div>
           </div>
+
+          {/* Theme Toggle */}
+          <button 
+            onClick={toggleMode}
+            className="flex items-center justify-center" 
+            style={{ color: 'var(--text-primary)', background: 'rgba(128,128,128,0.1)', border: '1px solid var(--border)', cursor: 'pointer', padding: '8px', borderRadius: '8px', marginRight: '8px' }}
+          >
+            {mode === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
 
           {/* CTA */}
           <motion.a

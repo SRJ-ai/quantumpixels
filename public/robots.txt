@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://srj-ai.github.io/quantumpixels/sitemap.xml

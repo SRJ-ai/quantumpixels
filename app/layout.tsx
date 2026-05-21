@@ -6,6 +6,7 @@ import Preloader from '@/components/ui/Preloader'
 import FilmGrain from '@/components/ui/FilmGrain'
 import SoundManager from '@/components/SoundManager'
 import EasterEgg from '@/components/EasterEgg'
+import CookieBanner from '@/components/CookieBanner'
 import { ThemeProvider } from '@/components/ThemeContext'
 
 const spaceGrotesk = Space_Grotesk({
@@ -59,6 +60,7 @@ export default function RootLayout({
           <EasterEgg />
           <Preloader />
           <CustomCursor />
+          <CookieBanner />
           {children}
         </ThemeProvider>
       </body>

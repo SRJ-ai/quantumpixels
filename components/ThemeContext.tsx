@@ -7,6 +7,8 @@ export type Theme = 'cyberpunk' | 'matrix' | 'apple'
 interface ThemeContextType {
   theme: Theme
   setTheme: (theme: Theme) => void
+  mode: 'dark' | 'light'
+  toggleMode: () => void
   colors: {
     primary: string
     secondary: string
@@ -23,9 +25,34 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('cyberpunk')
+  const [mode, setMode] = useState<'dark' | 'light'>('dark')
+
+  useEffect(() => {
+    const saved = localStorage.getItem('qp-theme-mode') as 'dark' | 'light'
+    if (saved) setMode(saved)
+  }, [])
+
+  useEffect(() => {
+    const root = document.documentElement
+    if (mode === 'light') {
+      root.classList.remove('dark')
+      root.classList.add('light')
+    } else {
+      root.classList.remove('light')
+      root.classList.add('dark')
+    }
+  }, [mode])
+
+  const toggleMode = () => {
+    setMode(m => {
+      const nextMode = m === 'dark' ? 'light' : 'dark'
+      localStorage.setItem('qp-theme-mode', nextMode)
+      return nextMode
+    })
+  }
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, colors: themeColors[theme] }}>
+    <ThemeContext.Provider value={{ theme, setTheme, mode, toggleMode, colors: themeColors[theme] }}>
       {children}
     </ThemeContext.Provider>
   )
