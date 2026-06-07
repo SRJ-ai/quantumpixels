@@ -3,7 +3,6 @@ import path from "path";
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: '/quantumpixels',
   images: { unoptimized: true },
   transpilePackages: ['three'],
   turbopack: {

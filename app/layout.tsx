@@ -31,7 +31,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://srj-ai.github.io/quantumpixels'),
+  metadataBase: new URL('https://quantumpixel.duckdns.org'),
   title: "Quantum Pixels - Where Creativity Meets Engineering",
   description: "We build intelligent digital experiences that merge creativity with cutting-edge engineering.",
   keywords: ['futuristic software startup', 'education technology', 'gaming studio', 'software development company', 'AI-powered digital solutions', 'engineering startup'],
