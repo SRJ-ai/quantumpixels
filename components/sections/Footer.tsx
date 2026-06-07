@@ -46,7 +46,7 @@ export default function Footer() {
           <div style={{ gridColumn: '1 / -1', maxWidth: 300 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
               <div style={{ width: 28, height: 28, borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-elevated)', border: '1px solid var(--border)', overflow: 'hidden' }}>
-                <Image src="/quantumpixels/logo.png" alt="Quantum Pixels Logo" width={28} height={28} style={{ objectFit: 'cover' }} />
+                <Image src="/logo.png" alt="Quantum Pixels Logo" width={28} height={28} style={{ objectFit: 'cover' }} />
               </div>
               <span style={{ fontSize: 24, fontWeight: 600, letterSpacing: '-0.02em', background: 'linear-gradient(to right, var(--gradient-1), var(--gradient-2))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontFamily: 'var(--font-inter)' }}>
                 Quantum Pixel

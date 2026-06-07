@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   keywords: ['futuristic software startup', 'education technology', 'gaming studio', 'software development company', 'AI-powered digital solutions', 'engineering startup'],
   authors: [{ name: 'Quantum Pixels' }],
   icons: {
-    icon: '/quantumpixels/logo.png',
-    shortcut: '/quantumpixels/logo.png',
-    apple: '/quantumpixels/logo.png',
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
   },
   openGraph: {
     title: 'Quantum Pixels — Engineering The Future',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: 'Quantum Pixels',
     images: [
       {
-        url: '/quantumpixels/logo.png',
+        url: '/logo.png',
         width: 800,
         height: 600,
         alt: 'Quantum Pixels Logo',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Quantum Pixels — Engineering The Future',
     description: 'Education. Gaming. Software Innovation — Built by the Next Generation.',
-    images: ['/quantumpixels/logo.png'],
+    images: ['/logo.png'],
   },
   robots: {
     index: true,

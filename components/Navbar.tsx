@@ -51,7 +51,7 @@ export default function Navbar() {
               background: 'var(--bg-elevated)', border: '1px solid var(--border)',
               overflow: 'hidden'
             }}>
-              <Image src="/quantumpixels/logo.png" alt="Quantum Pixels Logo" width={32} height={32} style={{ objectFit: 'cover' }} priority />
+              <Image src="/logo.png" alt="Quantum Pixels Logo" width={32} height={32} style={{ objectFit: 'cover' }} priority />
             </div>
             <span style={{ fontSize: 24, fontWeight: 600, letterSpacing: '-0.02em', background: 'linear-gradient(to right, var(--gradient-1), var(--gradient-2))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontFamily: 'var(--font-inter)' }}>
               Quantum Pixel
