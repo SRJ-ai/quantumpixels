@@ -308,7 +308,7 @@ export default function HybridScene() {
 
   return (
     <PerformanceMonitor onIncline={() => setDpr(1.5)} onDecline={() => setDpr(1)}>
-      <ambientLight intensity={mode === 'light' ? 1.5 : 0.5} color={mode === 'light' ? '#ffffff' : '#ffffff'} />
+      <ambientLight intensity={mode === 'light' ? 1.5 : 0.5} color="#ffffff" />
       <directionalLight position={[10, 10, 5]} intensity={mode === 'light' ? 2 : 1.5} color={mode === 'light' ? '#ffffff' : colors.primary} />
       <Environment preset="city" />
 
