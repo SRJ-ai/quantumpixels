@@ -18,6 +18,11 @@ export default function TermsOfService() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
+            <div style={{ marginBottom: 40 }}>
+              <Link href="/" style={{ color: '#00FFB2', textDecoration: 'none', fontWeight: 500, fontSize: 14, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                &larr; Back to Home
+              </Link>
+            </div>
             <h1 className="qp-headline" style={{ marginBottom: 16 }}>Terms of Service</h1>
             <p className="qp-body" style={{ marginBottom: 48, color: '#86868B' }}>Last updated: May 21, 2026</p>
 

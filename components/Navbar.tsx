@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sun, Moon } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useTheme } from '@/components/ThemeContext'
 
 const links = [
@@ -44,7 +45,7 @@ export default function Navbar() {
       >
         <div style={{ maxWidth: 1024, margin: '0 auto', padding: '0 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           {/* Logo */}
-          <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', textDecoration: 'none' }}>
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', textDecoration: 'none' }}>
             <div style={{
               width: 32, height: 32, borderRadius: 8,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -56,7 +57,7 @@ export default function Navbar() {
             <span style={{ fontSize: 24, fontWeight: 600, letterSpacing: '-0.02em', background: 'linear-gradient(to right, var(--gradient-1), var(--gradient-2))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontFamily: 'var(--font-inter)' }}>
               Quantum Pixel
             </span>
-          </a>
+          </Link>
 
           {/* Desktop links */}
           <div style={{ alignItems: 'center', gap: '2rem' }} className="hidden md:flex">
