@@ -1,12 +1,24 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import { getCalApi } from '@calcom/embed-react'
 
 export default function CTA() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi()
+      cal('ui', { 
+        styles: { branding: { brandColor: '#00FFB2' } }, 
+        hideEventTypeDetails: false, 
+        layout: 'month_view' 
+      })
+    })()
+  }, [])
 
   return (
     <section id="contact" className="qp-section" style={{ background: 'transparent' }}>
@@ -76,10 +88,9 @@ export default function CTA() {
             <ArrowRight size={14} className="cta-arrow" style={{ transition: 'transform 0.2s' }} />
           </motion.a>
           
-          <motion.a
-            href="https://cal.com/quantumpixel"
-            target="_blank"
-            rel="noopener noreferrer"
+          <motion.button
+            data-cal-link="quantumpixel"
+            data-cal-config='{"layout":"month_view"}'
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 400, damping: 25 }}
@@ -87,14 +98,14 @@ export default function CTA() {
               padding: '0.875rem 2rem', borderRadius: 999,
               border: '1px solid var(--border)', color: 'var(--text-primary)',
               fontSize: 14, fontWeight: 600, textDecoration: 'none',
-              background: 'transparent',
+              background: 'transparent', cursor: 'pointer',
               transition: 'border-color 0.3s, background 0.3s',
             }}
             onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--border-hover)'; e.currentTarget.style.background = 'var(--bg-card)' }}
             onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.background = 'transparent' }}
           >
             Book a Call
-          </motion.a>
+          </motion.button>
         </motion.div>
       </div>
     </section>
