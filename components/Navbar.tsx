@@ -102,7 +102,9 @@ export default function Navbar() {
 
           {/* CTA */}
           <motion.a
-            href="#contact"
+            href="https://wa.me/918309210440"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             whileHover={{ scale: 1.03 }}

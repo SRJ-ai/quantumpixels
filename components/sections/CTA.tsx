@@ -51,7 +51,9 @@ export default function CTA() {
           style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: 16 }}
         >
           <motion.a
-            href="mailto:hello@quantumpixels.dev"
+            href="https://wa.me/918309210440"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 400, damping: 25 }}
