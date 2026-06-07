@@ -312,13 +312,15 @@ export default function HybridScene() {
       <directionalLight position={[10, 10, 5]} intensity={mode === 'light' ? 2 : 1.5} color={mode === 'light' ? '#ffffff' : colors.primary} />
       <Environment preset="city" />
 
-      <AbstractGlass isMobile={isMobile} />
+      {!isMobile && <AbstractGlass isMobile={isMobile} />}
       <ParticleCosmos isMobile={isMobile} />
-      <GeometricArchitecture isMobile={isMobile} />
+      {!isMobile && <GeometricArchitecture isMobile={isMobile} />}
       
-      <Physics gravity={[0, 0, 0]}>
-        <PhysicsOrbs isMobile={isMobile} />
-      </Physics>
+      {!isMobile && (
+        <Physics gravity={[0, 0, 0]}>
+          <PhysicsOrbs isMobile={isMobile} />
+        </Physics>
+      )}
       
       {/* Cinematic Post-Processing */}
       {!isMobile && dpr > 1 && (

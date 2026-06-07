@@ -1,9 +1,21 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { useTheme } from '@/components/ThemeContext'
 
 export default function FilmGrain() {
   const { mode } = useTheme()
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768)
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  if (isMobile) return null
+
   return (
     <div
       style={{
