@@ -23,7 +23,7 @@ export default function FilmGrain() {
           <feTurbulence 
             type="fractalNoise" 
             baseFrequency="0.8" 
-            numOctaves="3" 
+            numOctaves="1" 
             stitchTiles="stitch"
           />
         </filter>

@@ -2,10 +2,10 @@
 
 import { useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Environment, Float, MeshTransmissionMaterial, ContactShadows } from '@react-three/drei'
+import { Environment, Float, MeshTransmissionMaterial, ContactShadows, PerformanceMonitor } from '@react-three/drei'
 import * as THREE from 'three'
 
-function AbstractShape() {
+function AbstractShape({ perf }: { perf: 'high' | 'low' }) {
   const meshRef = useRef<THREE.Mesh>(null)
   const [targetRot] = useState(() => new THREE.Vector2())
   const [currentRot] = useState(() => new THREE.Vector2())
@@ -38,9 +38,9 @@ function AbstractShape() {
         <icosahedronGeometry args={[1.5, 0]} />
         <MeshTransmissionMaterial
           backside
-          samples={4}
+          samples={perf === 'low' ? 2 : 4}
           thickness={0.5}
-          chromaticAberration={0.4}
+          chromaticAberration={perf === 'low' ? 0.2 : 0.4}
           anisotropy={0.3}
           distortion={0.5}
           distortionScale={0.5}
@@ -67,14 +67,21 @@ function AbstractShape() {
 }
 
 export default function Interactive3D() {
+  const [dpr, setDpr] = useState(1.5)
+  const [perf, setPerf] = useState<'high' | 'low'>('high')
+
   return (
     <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 0 }}>
-      <Canvas camera={{ position: [0, 0, 6], fov: 45 }} dpr={[1, 2]}>
+      <Canvas camera={{ position: [0, 0, 6], fov: 45 }} dpr={dpr}>
+        <PerformanceMonitor 
+          onIncline={() => { setDpr(1.5); setPerf('high'); }} 
+          onDecline={() => { setDpr(0.75); setPerf('low'); }} 
+        />
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={1.5} color="#00FFB2" />
         <directionalLight position={[-10, -10, -5]} intensity={1} color="#A855F7" />
         
-        <AbstractShape />
+        <AbstractShape perf={perf} />
         
         <Environment preset="city" />
         <ContactShadows position={[0, -2.5, 0]} opacity={0.4} scale={10} blur={2} far={4} color="#00FFB2" />
