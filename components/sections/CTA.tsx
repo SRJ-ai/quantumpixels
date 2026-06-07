@@ -77,7 +77,7 @@ export default function CTA() {
           </motion.a>
           
           <motion.a
-            href="https://cal.com"
+            href="https://cal.com/quantumpixel"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
