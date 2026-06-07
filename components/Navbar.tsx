@@ -18,7 +18,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen]         = useState(false)
   const { scrollY }             = useScroll()
-  const { theme, setTheme, colors, mode, toggleMode } = useTheme()
+  const { theme, setTheme, colors, mode } = useTheme()
 
   useMotionValueEvent(scrollY, 'change', (v) => setScrolled(v > 50))
 
@@ -53,8 +53,8 @@ export default function Navbar() {
             }}>
               <Image src="/quantumpixels/logo.png" alt="Quantum Pixels Logo" width={32} height={32} style={{ objectFit: 'cover' }} priority />
             </div>
-            <span style={{ fontSize: 24, fontWeight: 400, letterSpacing: '-0.02em', color: 'var(--text-primary)', fontFamily: 'var(--font-instrument-serif)' }}>
-              Quantum Pixels
+            <span style={{ fontSize: 24, fontWeight: 600, letterSpacing: '-0.02em', background: 'linear-gradient(to right, var(--gradient-1), var(--gradient-2))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontFamily: 'var(--font-inter)' }}>
+              Quantum Pixel
             </span>
           </a>
 
@@ -84,7 +84,7 @@ export default function Navbar() {
                   aria-label={`Switch to ${t} theme`}
                   style={{
                     width: 12, height: 12, borderRadius: '50%',
-                    background: t === 'cyberpunk' ? '#A855F7' : t === 'matrix' ? '#00FF41' : '#FFFFFF',
+                    background: t === 'cyberpunk' ? '#007BFF' : t === 'matrix' ? '#00FF41' : '#FFFFFF',
                     border: theme === t ? '2px solid #fff' : '2px solid transparent',
                     cursor: 'pointer',
                     opacity: theme === t ? 1 : 0.4,
@@ -97,15 +97,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Theme Toggle */}
-          <button 
-            onClick={toggleMode}
-            aria-label="Toggle Light/Dark Mode"
-            className="flex items-center justify-center" 
-            style={{ color: 'var(--text-primary)', background: 'rgba(128,128,128,0.1)', border: '1px solid var(--border)', cursor: 'pointer', padding: '8px', borderRadius: '8px', marginRight: '8px' }}
-          >
-            {mode === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
+
 
           {/* CTA */}
           <motion.a
@@ -118,10 +110,10 @@ export default function Navbar() {
             className="hidden md:inline-flex"
             style={{
               fontSize: 14, fontWeight: 500, 
-              color: mode === 'light' ? '#FFFFFF' : '#000000', 
+              color: '#000000', 
               textDecoration: 'none',
               padding: '0.625rem 1.5rem', borderRadius: 999,
-              background: mode === 'light' ? '#000000' : '#FFFFFF',
+              background: '#FFFFFF',
               transition: 'background 0.3s',
             }}
           >

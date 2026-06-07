@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import { motion, useInView, useSpring } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { useTheme } from '@/components/ThemeContext'
 
@@ -38,25 +38,11 @@ export default function Projects() {
   const { colors } = useTheme()
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
-  // Spring for smooth liquid displacement
-  const displacement = useSpring(0, { stiffness: 100, damping: 10 })
 
   return (
     <section id="projects" className="qp-section" style={{ background: 'transparent' }}>
       
-      {/* SVG Liquid Filter */}
-      <svg style={{ position: 'absolute', width: 0, height: 0, pointerEvents: 'none' }}>
-        <filter id="liquidFilter">
-          <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise" />
-          <motion.feDisplacementMap 
-            in="SourceGraphic" 
-            in2="noise" 
-            scale={displacement} 
-            xChannelSelector="R" 
-            yChannelSelector="G" 
-          />
-        </filter>
-      </svg>
+
       <div ref={ref} style={{ maxWidth: 900, margin: '0 auto', padding: '0 1.5rem', position: 'relative' }}>
         <div style={{ position: 'absolute', inset: -20, background: 'var(--bg-glass)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', zIndex: -1, pointerEvents: 'none', borderRadius: 24, border: '1px solid var(--border)' }} />
         <motion.p
@@ -99,12 +85,9 @@ export default function Projects() {
                 overflow: 'hidden',
                 willChange: 'transform, opacity',
                 transform: 'translateZ(0)',
-                // Apply liquid filter conditionally if hovered
-                filter: hoveredIndex === i ? 'url(#liquidFilter)' : 'none'
               }}
               onMouseEnter={(e) => {
                 setHoveredIndex(i)
-                displacement.set(20) // trigger liquid ripple
                 e.currentTarget.style.background = 'var(--bg-card)';
                 const title = e.currentTarget.querySelector('.proj-title') as HTMLElement;
                 if (title) title.style.color = colors.primary;
@@ -116,7 +99,6 @@ export default function Projects() {
               }}
               onMouseLeave={(e) => {
                 setHoveredIndex(null)
-                displacement.set(0) // settle back down
                 e.currentTarget.style.background = 'transparent';
                 const title = e.currentTarget.querySelector('.proj-title') as HTMLElement;
                 if (title) title.style.color = 'var(--text-primary)';

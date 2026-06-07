@@ -16,7 +16,7 @@ interface ThemeContextType {
 }
 
 const themeColors = {
-  cyberpunk: { primary: '#00FFB2', secondary: '#A855F7' },
+  cyberpunk: { primary: '#00FFB2', secondary: '#007BFF' },
   matrix: { primary: '#00FF41', secondary: '#003B00' },
   apple: { primary: '#FFFFFF', secondary: '#86868B' }
 }
@@ -25,30 +25,25 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('cyberpunk')
-  const [mode, setMode] = useState<'dark' | 'light'>('dark')
+  const mode = 'dark' // Locked to dark mode
 
   useEffect(() => {
-    const saved = localStorage.getItem('qp-theme-mode') as 'dark' | 'light'
-    if (saved) setMode(saved)
+    const root = document.documentElement
+    root.classList.remove('light')
+    root.classList.add('dark')
   }, [])
 
   useEffect(() => {
     const root = document.documentElement
-    if (mode === 'light') {
-      root.classList.remove('dark')
-      root.classList.add('light')
-    } else {
-      root.classList.remove('light')
-      root.classList.add('dark')
-    }
-  }, [mode])
+    const current = themeColors[theme]
+    root.style.setProperty('--gradient-1', current.primary)
+    root.style.setProperty('--gradient-2', current.secondary)
+    root.style.setProperty('--gradient-3', current.primary)
+    root.style.setProperty('--accent', current.primary)
+  }, [theme])
 
   const toggleMode = () => {
-    setMode(m => {
-      const nextMode = m === 'dark' ? 'light' : 'dark'
-      localStorage.setItem('qp-theme-mode', nextMode)
-      return nextMode
-    })
+    // Light mode removed
   }
 
   return (

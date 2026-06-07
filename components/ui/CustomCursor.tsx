@@ -10,10 +10,6 @@ export default function CustomCursor() {
   const [isTouch, setIsTouch] = useState(true)
 
   useEffect(() => {
-    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768
-    setIsTouch(isTouchDevice)
-    if (isTouchDevice) return
-
     const updateMousePosition = (e: MouseEvent) => {
       if (!isVisible) setIsVisible(true)
       setMousePosition({ x: e.clientX, y: e.clientY })
@@ -21,26 +17,36 @@ export default function CustomCursor() {
       // Check if hovering over a clickable element
       const target = e.target as HTMLElement
       const isClickable = 
-        target.tagName.toLowerCase() === 'a' ||
-        target.tagName.toLowerCase() === 'button' ||
+        target.tagName?.toLowerCase() === 'a' ||
+        target.tagName?.toLowerCase() === 'button' ||
         target.closest('a') != null ||
         target.closest('button') != null
         
       setIsHovering(isClickable)
     }
 
+    const checkDevice = () => {
+      const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768
+      setIsTouch(isTouchDevice)
+      if (isTouchDevice) {
+        document.body.style.cursor = 'auto'
+      } else {
+        document.body.style.cursor = 'none'
+      }
+    }
+
+    checkDevice()
     window.addEventListener('mousemove', updateMousePosition)
-    
-    // Hide default cursor on body
-    document.body.style.cursor = 'none'
+    window.addEventListener('resize', checkDevice)
 
     return () => {
       window.removeEventListener('mousemove', updateMousePosition)
+      window.removeEventListener('resize', checkDevice)
       document.body.style.cursor = 'auto'
     }
   }, [isVisible, isTouch])
 
-  if (isTouch || !isVisible) return null
+  if (isTouch) return null
 
   return (
     <>
@@ -51,8 +57,8 @@ export default function CustomCursor() {
           top: 0, left: 0,
           width: 32, height: 32,
           borderRadius: '50%',
-          backgroundColor: isHovering ? 'transparent' : 'transparent',
-          border: isHovering ? '1px solid var(--text-primary)' : '1px solid var(--text-primary)',
+          backgroundColor: 'transparent',
+          border: '1px solid var(--text-primary)',
           pointerEvents: 'none',
           zIndex: 9999,
           display: 'flex',

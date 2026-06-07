@@ -1,6 +1,7 @@
 'use client'
 import { Zap } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useTheme } from '@/components/ThemeContext'
 
 const links = [
@@ -18,6 +19,7 @@ const links = [
       { label: 'About',     href: '#about' },
       { label: 'Process',   href: '#process' },
       { label: 'Contact',   href: '#contact' },
+      { label: 'Cookie Policy', href: '/cookie-policy' },
     ],
   },
   {
@@ -28,7 +30,7 @@ const links = [
       { label: 'Telegram', href: 'https://telegram.org' },
       { label: 'WhatsApp', href: 'https://whatsapp.com' },
       { label: 'X (Twitter)', href: 'https://x.com' },
-      { label: 'LinkedIn', href: 'https://linkedin.com' },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/quantum-pixel-64a95a413/' },
     ],
   },
 ]
@@ -43,11 +45,11 @@ export default function Footer() {
           {/* Brand */}
           <div style={{ gridColumn: '1 / -1', maxWidth: 300 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
-              <div style={{ width: 28, height: 28, borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
-                <Zap size={14} color="#00FFB2" />
+              <div style={{ width: 28, height: 28, borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-elevated)', border: '1px solid var(--border)', overflow: 'hidden' }}>
+                <Image src="/quantumpixels/logo.png" alt="Quantum Pixels Logo" width={28} height={28} style={{ objectFit: 'cover' }} />
               </div>
-              <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--text-primary)', fontFamily: 'var(--heading-font)' }}>
-                Quantum<span className="qp-gradient">Pixels</span>
+              <span style={{ fontSize: 24, fontWeight: 600, letterSpacing: '-0.02em', background: 'linear-gradient(to right, var(--gradient-1), var(--gradient-2))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontFamily: 'var(--font-inter)' }}>
+                Quantum Pixel
               </span>
             </div>
             <p style={{ fontSize: 12, color: 'var(--text-tertiary)', lineHeight: 1.6 }}>
